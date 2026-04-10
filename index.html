@@ -182,7 +182,7 @@
     }
 
     .hero-subtitle {
-      max-width: 560px;
+      max-width: 620px;
       margin: 1rem auto 0;
       color: var(--muted);
       font-size: clamp(1rem, 2.9vw, 1.15rem);
@@ -423,7 +423,7 @@
     .card-desc {
       color: var(--muted);
       font-size: 0.94rem;
-      min-height: 2.8em;
+      min-height: 4.2em;
     }
 
     .card-btn {
@@ -448,6 +448,83 @@
       transform: translateY(-2px);
       filter: brightness(1.05);
       box-shadow: 0 16px 34px rgba(255, 0, 60, 0.24);
+    }
+
+    .content-block {
+      margin-top: 1.4rem;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1rem;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .panel h3 {
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.65rem;
+    }
+
+    .panel p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .bullet-list {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .bullet-list li {
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .bullet-list li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      margin-top: 0.35rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--red), var(--pink));
+      box-shadow: 0 0 12px rgba(255, 79, 135, 0.4);
+      flex: 0 0 10px;
+    }
+
+    .info-stack {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .info-item {
+      padding: 0.9rem 0.95rem;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .info-item strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .info-item span {
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
     .cta-wrap {
@@ -542,8 +619,13 @@
     }
 
     @media (max-width: 920px) {
-      .grid {
+      .grid,
+      .content-block {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .content-block {
+        grid-template-columns: 1fr;
       }
 
       .thumb {
@@ -594,7 +676,9 @@
             <span class="emoji">👀</span>
             <span class="line">AGORA</span>
           </h1>
-          <p class="hero-subtitle">Confira os destaques disponíveis abaixo.</p>
+          <p class="hero-subtitle">
+            Confira os destaques disponíveis abaixo. Seleção atualizada com conteúdos visuais de alto impacto, acesso rápido e navegação direta.
+          </p>
         </div>
       </div>
     </header>
@@ -621,13 +705,15 @@
                   <div class="animal cat">🐆</div>
                   <div class="thumb-text">
                     <span class="thumb-kicker">Atualizado</span>
-                    <div class="thumb-strong">Alto impacto</div>
+                    <div class="thumb-strong">Visuais em alta</div>
                   </div>
                 </div>
               </div>
               <div class="card-body">
-                <h3 class="card-title">Destaque visual intenso</h3>
-                <p class="card-desc">Conteúdo com visual forte, contraste elevado e apresentação moderna.</p>
+                <h3 class="card-title">Tendências do momento</h3>
+                <p class="card-desc">
+                  Reunimos os conteúdos mais procurados agora em uma seleção com estética forte, contraste marcante e apresentação premium.
+                </p>
                 <a href="#" class="card-btn">Ver agora</a>
               </div>
             </article>
@@ -640,14 +726,16 @@
                   <div class="shape two" style="left:12px;bottom:18px;width:82px;height:82px;"></div>
                   <div class="mini-grid"></div>
                   <div class="thumb-text">
-                    <span class="thumb-kicker">Visão rápida</span>
+                    <span class="thumb-kicker">Curadoria visual</span>
                     <div class="thumb-strong">Mais vistos</div>
                   </div>
                 </div>
               </div>
               <div class="card-body">
-                <h3 class="card-title">Seleção premium</h3>
-                <p class="card-desc">Cards marcantes com aparência atual e composição visual atraente.</p>
+                <h3 class="card-title">Seleção premium do dia</h3>
+                <p class="card-desc">
+                  Um bloco com destaques que chamam atenção logo no primeiro olhar, ideal para quem busca acesso rápido ao que está em evidência.
+                </p>
                 <a href="#" class="card-btn">Ver agora</a>
               </div>
             </article>
@@ -660,14 +748,16 @@
                   <div class="shape three"></div>
                   <div class="animal bird">🦅</div>
                   <div class="thumb-text">
-                    <span class="thumb-kicker">Curadoria</span>
-                    <div class="thumb-strong">Visual em alta</div>
+                    <span class="thumb-kicker">Experiência forte</span>
+                    <div class="thumb-strong">Impacto visual</div>
                   </div>
                 </div>
               </div>
               <div class="card-body">
                 <h3 class="card-title">Conteúdo com presença</h3>
-                <p class="card-desc">Estética escura, brilho neon e sensação de movimento com profundidade.</p>
+                <p class="card-desc">
+                  Destaques com visual energético, camadas gráficas modernas e sensação de movimento para manter a coerência com a chegada do anúncio.
+                </p>
                 <a href="#" class="card-btn">Ver agora</a>
               </div>
             </article>
@@ -680,14 +770,16 @@
                   <div class="shape two" style="left:26px;bottom:22px;background:linear-gradient(135deg, rgba(255,255,255,0.08), rgba(0,0,0,0.2));"></div>
                   <div class="mini-grid"></div>
                   <div class="thumb-text">
-                    <span class="thumb-kicker">Escolha rápida</span>
+                    <span class="thumb-kicker">Acesso rápido</span>
                     <div class="thumb-strong">Veja primeiro</div>
                   </div>
                 </div>
               </div>
               <div class="card-body">
-                <h3 class="card-title">Experiência visual direta</h3>
-                <p class="card-desc">Layout pensado para impacto imediato no mobile com leitura clara.</p>
+                <h3 class="card-title">Navegação direta e rápida</h3>
+                <p class="card-desc">
+                  Um espaço pensado para entregar os principais destaques sem rodeios, com leitura curta e foco total na ação.
+                </p>
                 <a href="#" class="card-btn">Ver agora</a>
               </div>
             </article>
@@ -700,14 +792,16 @@
                   <div class="shape three"></div>
                   <div class="animal wolf">🐺</div>
                   <div class="thumb-text">
-                    <span class="thumb-kicker">Efeito visual</span>
-                    <div class="thumb-strong">Chamativo</div>
+                    <span class="thumb-kicker">Estilo premium</span>
+                    <div class="thumb-strong">Curadoria forte</div>
                   </div>
                 </div>
               </div>
               <div class="card-body">
-                <h3 class="card-title">Composição premium</h3>
-                <p class="card-desc">Detalhes integrados com brilho, textura e acabamento limpo.</p>
+                <h3 class="card-title">Composição visual premium</h3>
+                <p class="card-desc">
+                  Conteúdo organizado com brilho, profundidade e elementos decorativos discretos para reforçar a identidade visual da página.
+                </p>
                 <a href="#" class="card-btn">Ver agora</a>
               </div>
             </article>
@@ -727,10 +821,45 @@
               </div>
               <div class="card-body">
                 <h3 class="card-title">Destaques em evidência</h3>
-                <p class="card-desc">Área visual pronta para continuar a experiência iniciada no anúncio.</p>
+                <p class="card-desc">
+                  Área visual criada para manter o interesse do visitante com blocos claros, modernos e sempre prontos para receber novos destaques.
+                </p>
                 <a href="#" class="card-btn">Ver agora</a>
               </div>
             </article>
+          </div>
+
+          <div class="content-block">
+            <div class="panel">
+              <h3>O que você encontra aqui</h3>
+              <p>
+                Esta página foi estruturada para destacar conteúdos visuais de forma rápida, clara e coerente com uma experiência moderna de descoberta.
+              </p>
+              <ul class="bullet-list">
+                <li>Cards atualizados com visual forte e leitura simples.</li>
+                <li>Organização pensada para facilitar o acesso aos destaques principais.</li>
+                <li>Elementos gráficos discretos que reforçam a identidade escura, intensa e premium.</li>
+                <li>Composição responsiva para manter impacto tanto no mobile quanto no desktop.</li>
+              </ul>
+            </div>
+
+            <div class="panel">
+              <h3>Destaques da experiência</h3>
+              <div class="info-stack">
+                <div class="info-item">
+                  <strong>Visual consistente</strong>
+                  <span>Mesma energia estética da comunicação inicial, com continuidade clara na página.</span>
+                </div>
+                <div class="info-item">
+                  <strong>Leitura objetiva</strong>
+                  <span>Títulos curtos, descrições diretas e botões visíveis para ação imediata.</span>
+                </div>
+                <div class="info-item">
+                  <strong>Atualização frequente</strong>
+                  <span>Estrutura pronta para manter os destaques sempre renovados.</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="cta-wrap">
