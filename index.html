@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VEJA AGORA | Tendências da internet</title>
+  <title>VEJA AGORA | Portal de conteúdo digital</title>
   <meta
     name="description"
-    content="Portal de conteúdo digital com tendências da internet, conteúdos virais e curiosidades que estão chamando atenção agora."
+    content="Portal de conteúdo digital com tendências da internet, conteúdos virais, cultura digital e curiosidades que estão chamando atenção agora."
   />
   <style>
     :root {
@@ -206,6 +206,8 @@
         0 14px 36px rgba(255, 43, 77, 0.28),
         inset 0 1px 0 rgba(255,255,255,0.25);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: none;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -213,6 +215,26 @@
       box-shadow:
         0 18px 42px rgba(255, 43, 77, 0.34),
         inset 0 1px 0 rgba(255,255,255,0.25);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.94rem;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255, 79, 184, 0.3);
+      transform: translateY(-1px);
     }
 
     .hero-visual {
@@ -364,6 +386,9 @@
       overflow: hidden;
       box-shadow: var(--shadow);
       transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
     }
 
     .card:hover {
@@ -376,85 +401,172 @@
       position: relative;
       aspect-ratio: 16 / 10;
       overflow: hidden;
-      background:
-        linear-gradient(135deg, rgba(255, 43, 77, 0.85), rgba(255, 79, 184, 0.72) 48%, rgba(141, 77, 255, 0.82));
       isolation: isolate;
-    }
-
-    .thumb::before,
-    .thumb::after {
-      content: "";
-      position: absolute;
-      inset: auto;
-      filter: blur(8px);
-      opacity: 0.8;
+      background:
+        linear-gradient(135deg, rgba(10, 10, 16, 1) 0%, rgba(20, 14, 33, 1) 45%, rgba(35, 10, 26, 1) 100%);
     }
 
     .thumb::before {
-      width: 120px;
-      height: 120px;
-      top: 14px;
-      right: 16px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.65), rgba(255,255,255,0));
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 78% 20%, rgba(255,255,255,0.08), transparent 16%),
+        radial-gradient(circle at 20% 82%, rgba(255, 43, 77, 0.22), transparent 22%),
+        radial-gradient(circle at 68% 62%, rgba(255, 79, 184, 0.18), transparent 18%);
     }
 
     .thumb::after {
-      width: 180px;
-      height: 180px;
-      bottom: -20px;
-      left: -10px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 43, 77, 0.75), rgba(255, 43, 77, 0));
-    }
-
-    .thumb .g {
+      content: "";
       position: absolute;
-      border: 1px solid rgba(255,255,255,0.22);
-      background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.03));
-      backdrop-filter: blur(3px);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.18;
+      mix-blend-mode: screen;
     }
 
-    .thumb.t1 .g1 { width: 84px; height: 84px; left: 18px; top: 20px; border-radius: 18px; transform: rotate(12deg); }
-    .thumb.t1 .g2 { width: 170px; height: 10px; right: 20px; bottom: 34px; border-radius: 999px; transform: rotate(-20deg); }
-    .thumb.t1 .g3 { width: 70px; height: 70px; right: 36px; top: 58px; border-radius: 50%; }
+    .thumb .glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(12px);
+      opacity: 0.8;
+    }
 
-    .thumb.t2 .g1 { width: 90px; height: 90px; right: 22px; top: 16px; border-radius: 50%; }
-    .thumb.t2 .g2 { width: 145px; height: 145px; left: 18px; bottom: 12px; border-radius: 26px; transform: rotate(-16deg); }
-    .thumb.t2 .g3 { width: 120px; height: 10px; left: 110px; top: 42px; border-radius: 999px; transform: rotate(18deg); }
+    .thumb .panel {
+      position: absolute;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+      backdrop-filter: blur(4px);
+    }
 
-    .thumb.t3 .g1 { width: 0; height: 0; left: 26px; top: 24px; border-left: 55px solid transparent; border-right: 55px solid transparent; border-bottom: 92px solid rgba(255,255,255,0.18); background: transparent; border-top: 0; }
-    .thumb.t3 .g2 { width: 150px; height: 150px; right: 20px; bottom: 16px; border-radius: 28px; transform: rotate(18deg); }
-    .thumb.t3 .g3 { width: 92px; height: 92px; right: 42px; top: 18px; border-radius: 18px; }
+    .thumb .line {
+      position: absolute;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(255,79,184,0.16), rgba(255,255,255,0.58), rgba(255,43,77,0.16));
+      box-shadow: 0 0 18px rgba(255, 79, 184, 0.18);
+    }
 
-    .thumb.t4 .g1 { width: 190px; height: 10px; left: 20px; top: 34px; border-radius: 999px; transform: rotate(-16deg); }
-    .thumb.t4 .g2 { width: 116px; height: 116px; right: 24px; top: 40px; border-radius: 24px; transform: rotate(10deg); }
-    .thumb.t4 .g3 { width: 70px; height: 70px; left: 34px; bottom: 20px; border-radius: 50%; }
+    .thumb .bars {
+      position: absolute;
+      display: flex;
+      align-items: end;
+      gap: 7px;
+    }
 
-    .thumb.t5 .g1 { width: 150px; height: 150px; left: 26px; top: 16px; border-radius: 30px; transform: rotate(20deg); }
-    .thumb.t5 .g2 { width: 80px; height: 80px; right: 28px; bottom: 20px; border-radius: 50%; }
-    .thumb.t5 .g3 { width: 130px; height: 10px; right: 46px; top: 34px; border-radius: 999px; transform: rotate(-26deg); }
+    .thumb .bars span {
+      width: 12px;
+      border-radius: 12px 12px 0 0;
+      background: linear-gradient(180deg, #ff7bc2, #ff2b4d);
+      box-shadow: 0 0 16px rgba(255, 79, 184, 0.2);
+    }
 
-    .thumb.t6 .g1 { width: 96px; height: 96px; left: 24px; bottom: 24px; border-radius: 22px; }
-    .thumb.t6 .g2 { width: 170px; height: 170px; right: 16px; top: 10px; border-radius: 50%; }
-    .thumb.t6 .g3 { width: 130px; height: 10px; left: 100px; bottom: 34px; border-radius: 999px; transform: rotate(22deg); }
+    .thumb .ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.2);
+      box-shadow: 0 0 20px rgba(255, 79, 184, 0.12);
+    }
+
+    .thumb.t1 .glow.g1 { width: 150px; height: 150px; top: -16px; right: 18px; background: radial-gradient(circle, rgba(255,79,184,0.85), rgba(255,79,184,0)); }
+    .thumb.t1 .panel.p1 { width: 130px; height: 84px; left: 22px; top: 26px; border-radius: 20px; }
+    .thumb.t1 .panel.p2 { width: 112px; height: 112px; right: 24px; bottom: 18px; border-radius: 24px; transform: rotate(12deg); }
+    .thumb.t1 .line.l1 { width: 180px; left: 84px; top: 54px; transform: rotate(-14deg); }
+    .thumb.t1 .bars { left: 34px; bottom: 22px; }
+    .thumb.t1 .bars span:nth-child(1) { height: 30px; }
+    .thumb.t1 .bars span:nth-child(2) { height: 52px; }
+    .thumb.t1 .bars span:nth-child(3) { height: 72px; }
+    .thumb.t1 .bars span:nth-child(4) { height: 44px; }
+
+    .thumb.t2 .glow.g1 { width: 120px; height: 120px; bottom: 8px; left: 12px; background: radial-gradient(circle, rgba(255,43,77,0.8), rgba(255,43,77,0)); }
+    .thumb.t2 .panel.p1 { width: 164px; height: 96px; right: 20px; top: 20px; border-radius: 18px; }
+    .thumb.t2 .panel.p2 { width: 92px; height: 92px; left: 28px; top: 34px; border-radius: 50%; }
+    .thumb.t2 .line.l1 { width: 130px; left: 110px; bottom: 34px; transform: rotate(16deg); }
+    .thumb.t2 .ring.r1 { width: 76px; height: 76px; right: 42px; bottom: 26px; }
+
+    .thumb.t3 .glow.g1 { width: 150px; height: 150px; top: 24px; left: 18px; background: radial-gradient(circle, rgba(141,77,255,0.72), rgba(141,77,255,0)); }
+    .thumb.t3 .panel.p1 { width: 100px; height: 100px; left: 26px; bottom: 22px; border-radius: 22px; transform: rotate(-10deg); }
+    .thumb.t3 .panel.p2 { width: 168px; height: 118px; right: 20px; top: 20px; border-radius: 24px; }
+    .thumb.t3 .line.l1 { width: 170px; right: 22px; bottom: 38px; transform: rotate(-18deg); }
+    .thumb.t3 .bars { right: 34px; bottom: 22px; }
+    .thumb.t3 .bars span:nth-child(1) { height: 24px; }
+    .thumb.t3 .bars span:nth-child(2) { height: 42px; }
+    .thumb.t3 .bars span:nth-child(3) { height: 66px; }
+    .thumb.t3 .bars span:nth-child(4) { height: 38px; }
+
+    .thumb.t4 .glow.g1 { width: 140px; height: 140px; top: 10px; right: 10px; background: radial-gradient(circle, rgba(255,79,184,0.8), rgba(255,79,184,0)); }
+    .thumb.t4 .panel.p1 { width: 138px; height: 138px; left: 20px; top: 18px; border-radius: 26px; transform: rotate(14deg); }
+    .thumb.t4 .panel.p2 { width: 92px; height: 92px; right: 32px; bottom: 24px; border-radius: 20px; }
+    .thumb.t4 .line.l1 { width: 196px; left: 78px; top: 40px; transform: rotate(-18deg); }
+    .thumb.t4 .ring.r1 { width: 72px; height: 72px; left: 44px; bottom: 26px; }
+
+    .thumb.t5 .glow.g1 { width: 140px; height: 140px; bottom: 8px; right: 18px; background: radial-gradient(circle, rgba(255,43,77,0.82), rgba(255,43,77,0)); }
+    .thumb.t5 .panel.p1 { width: 180px; height: 98px; left: 18px; top: 22px; border-radius: 20px; }
+    .thumb.t5 .panel.p2 { width: 88px; height: 88px; right: 28px; top: 28px; border-radius: 50%; }
+    .thumb.t5 .line.l1 { width: 144px; left: 90px; bottom: 28px; transform: rotate(20deg); }
+    .thumb.t5 .bars { left: 32px; bottom: 20px; }
+    .thumb.t5 .bars span:nth-child(1) { height: 58px; }
+    .thumb.t5 .bars span:nth-child(2) { height: 34px; }
+    .thumb.t5 .bars span:nth-child(3) { height: 70px; }
+    .thumb.t5 .bars span:nth-child(4) { height: 42px; }
+
+    .thumb.t6 .glow.g1 { width: 148px; height: 148px; top: -8px; left: 24px; background: radial-gradient(circle, rgba(255,79,184,0.75), rgba(255,79,184,0)); }
+    .thumb.t6 .panel.p1 { width: 118px; height: 118px; right: 24px; top: 26px; border-radius: 26px; transform: rotate(-12deg); }
+    .thumb.t6 .panel.p2 { width: 158px; height: 88px; left: 18px; bottom: 20px; border-radius: 18px; }
+    .thumb.t6 .line.l1 { width: 132px; right: 34px; bottom: 36px; transform: rotate(-16deg); }
+    .thumb.t6 .ring.r1 { width: 66px; height: 66px; left: 42px; top: 34px; }
 
     .card-body {
       padding: 20px 20px 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #ffd5e4;
+      background: rgba(255, 79, 184, 0.1);
+      border: 1px solid rgba(255, 79, 184, 0.18);
+    }
+
+    .reading-time {
+      color: var(--muted-2);
+      font-size: 0.84rem;
+      font-weight: 600;
     }
 
     .card-title {
-      margin: 0 0 8px;
+      margin: 0 0 10px;
       font-size: 1.12rem;
-      line-height: 1.2;
+      line-height: 1.25;
       letter-spacing: -0.02em;
     }
 
     .card-text {
-      margin: 0;
+      margin: 0 0 18px;
       color: var(--muted);
       font-size: 0.96rem;
+      flex: 1;
     }
 
     .article-wrap {
@@ -468,7 +580,9 @@
     .article-card,
     .side-panel,
     .explore-card,
-    .cta-panel {
+    .cta-panel,
+    .post-card,
+    .about-panel {
       background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.025));
       border: 1px solid var(--border);
       border-radius: 28px;
@@ -582,6 +696,7 @@
       font-size: 0.95rem;
     }
 
+    .posts-grid,
     .explore-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -589,16 +704,19 @@
       margin-top: 28px;
     }
 
+    .post-card,
     .explore-card {
       padding: 22px;
       transition: transform 0.22s ease, border-color 0.22s ease;
     }
 
+    .post-card:hover,
     .explore-card:hover {
       transform: translateY(-4px);
       border-color: rgba(255, 79, 184, 0.28);
     }
 
+    .post-top,
     .explore-icon {
       width: 54px;
       height: 54px;
@@ -610,15 +728,54 @@
       box-shadow: 0 12px 30px rgba(255, 43, 77, 0.2);
     }
 
+    .post-card h3,
     .explore-card h3 {
       margin: 0 0 10px;
       font-size: 1.15rem;
+      line-height: 1.25;
       letter-spacing: -0.02em;
     }
 
-    .explore-card p {
+    .post-card p,
+    .explore-card p,
+    .about-panel p {
       margin: 0;
       color: var(--muted);
+    }
+
+    .about-panel {
+      padding: 28px;
+      margin-top: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-panel::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      right: -60px;
+      bottom: -120px;
+      background: radial-gradient(circle, rgba(255, 79, 184, 0.18), rgba(255, 79, 184, 0));
+      filter: blur(12px);
+    }
+
+    .about-panel > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-panel h3 {
+      margin: 0 0 16px;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .about-panel p + p {
+      margin-top: 14px;
     }
 
     .cta {
@@ -681,14 +838,31 @@
     }
 
     .footer-wrap {
-      min-height: 86px;
       display: flex;
+      flex-direction: column;
+      gap: 16px;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: var(--muted);
       font-size: 0.95rem;
-      padding: 18px 0;
+      padding: 26px 0;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
     }
 
     .footer-wrap p {
@@ -705,7 +879,8 @@
         min-height: 360px;
       }
 
-      .cards-grid {
+      .cards-grid,
+      .posts-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -735,7 +910,9 @@
         font-size: 1.05rem;
       }
 
-      .cards-grid {
+      .cards-grid,
+      .posts-grid,
+      .explore-grid {
         grid-template-columns: 1fr;
       }
 
@@ -746,15 +923,20 @@
       .article-card,
       .side-panel,
       .explore-card,
-      .cta-panel {
+      .cta-panel,
+      .post-card,
+      .about-panel {
         border-radius: 22px;
       }
 
-      .article-card {
+      .article-card,
+      .about-panel {
         padding: 22px;
       }
 
-      .side-panel {
+      .side-panel,
+      .post-card,
+      .explore-card {
         padding: 20px;
       }
 
@@ -783,7 +965,9 @@
 
       <nav class="nav" aria-label="Navegação principal">
         <a href="#alta">Em alta</a>
+        <a href="#publicacoes">Publicações</a>
         <a href="#artigo">Artigo</a>
+        <a href="#sobre">Sobre</a>
         <a href="#explorar">Explorar mais</a>
       </nav>
     </div>
@@ -833,86 +1017,171 @@
         <div class="cards-grid">
           <article class="card">
             <div class="thumb t1" aria-hidden="true">
-              <span class="g g1"></span>
-              <span class="g g2"></span>
-              <span class="g g3"></span>
+              <span class="glow g1"></span>
+              <span class="panel p1"></span>
+              <span class="panel p2"></span>
+              <span class="line l1"></span>
+              <span class="bars">
+                <span></span><span></span><span></span><span></span>
+              </span>
             </div>
             <div class="card-body">
-              <h3 class="card-title">Curiosidades da internet</h3>
+              <div class="card-meta">
+                <span class="badge">Tendências digitais</span>
+                <span class="reading-time">3 min</span>
+              </div>
+              <h3 class="card-title">Como conteúdos virais ganham destaque nas redes</h3>
               <p class="card-text">
-                Conteúdos que viralizaram nas redes sociais e despertaram grande curiosidade do público.
+                Entenda por que alguns vídeos e imagens se espalham rapidamente entre milhões de usuários.
               </p>
+              <a href="#artigo" class="btn-outline">Ler mais</a>
             </div>
           </article>
 
           <article class="card">
             <div class="thumb t2" aria-hidden="true">
-              <span class="g g1"></span>
-              <span class="g g2"></span>
-              <span class="g g3"></span>
+              <span class="glow g1"></span>
+              <span class="panel p1"></span>
+              <span class="panel p2"></span>
+              <span class="line l1"></span>
+              <span class="ring r1"></span>
             </div>
             <div class="card-body">
-              <h3 class="card-title">Tendências digitais</h3>
+              <div class="card-meta">
+                <span class="badge">Conteúdo viral</span>
+                <span class="reading-time">4 min</span>
+              </div>
+              <h3 class="card-title">O poder das thumbnails que chamam atenção</h3>
               <p class="card-text">
-                Assuntos que estão sendo comentados e compartilhados em várias plataformas online.
+                Descubra por que imagens fortes e contrastantes fazem as pessoas parar o scroll.
               </p>
+              <a href="#publicacoes" class="btn-outline">Ler mais</a>
             </div>
           </article>
 
           <article class="card">
             <div class="thumb t3" aria-hidden="true">
-              <span class="g g1"></span>
-              <span class="g g2"></span>
-              <span class="g g3"></span>
+              <span class="glow g1"></span>
+              <span class="panel p1"></span>
+              <span class="panel p2"></span>
+              <span class="line l1"></span>
+              <span class="bars">
+                <span></span><span></span><span></span><span></span>
+              </span>
             </div>
             <div class="card-body">
-              <h3 class="card-title">Conteúdo viral</h3>
+              <div class="card-meta">
+                <span class="badge">Cultura digital</span>
+                <span class="reading-time">5 min</span>
+              </div>
+              <h3 class="card-title">O que faz um vídeo viralizar na internet</h3>
               <p class="card-text">
-                Vídeos e conteúdos que ganharam popularidade recentemente na internet.
+                Especialistas apontam os elementos que aumentam o alcance de conteúdos online.
               </p>
+              <a href="#artigo" class="btn-outline">Ler mais</a>
             </div>
           </article>
 
           <article class="card">
             <div class="thumb t4" aria-hidden="true">
-              <span class="g g1"></span>
-              <span class="g g2"></span>
-              <span class="g g3"></span>
+              <span class="glow g1"></span>
+              <span class="panel p1"></span>
+              <span class="panel p2"></span>
+              <span class="line l1"></span>
+              <span class="ring r1"></span>
             </div>
             <div class="card-body">
-              <h3 class="card-title">Destaques da semana</h3>
+              <div class="card-meta">
+                <span class="badge">Design digital</span>
+                <span class="reading-time">3 min</span>
+              </div>
+              <h3 class="card-title">Tendências visuais que dominam o feed atualmente</h3>
               <p class="card-text">
-                Uma seleção de temas que tiveram grande alcance e repercussão.
+                Cores vibrantes, contraste alto e elementos gráficos fortes estão em alta.
               </p>
+              <a href="#explorar" class="btn-outline">Ler mais</a>
             </div>
           </article>
 
           <article class="card">
             <div class="thumb t5" aria-hidden="true">
-              <span class="g g1"></span>
-              <span class="g g2"></span>
-              <span class="g g3"></span>
+              <span class="glow g1"></span>
+              <span class="panel p1"></span>
+              <span class="panel p2"></span>
+              <span class="line l1"></span>
+              <span class="bars">
+                <span></span><span></span><span></span><span></span>
+              </span>
             </div>
             <div class="card-body">
-              <h3 class="card-title">O que está circulando online</h3>
+              <div class="card-meta">
+                <span class="badge">Comportamento digital</span>
+                <span class="reading-time">4 min</span>
+              </div>
+              <h3 class="card-title">Como a curiosidade influencia o comportamento online</h3>
               <p class="card-text">
-                Conteúdos interessantes que estão sendo compartilhados entre usuários.
+                Entenda por que títulos instigantes despertam tanto interesse do público.
               </p>
+              <a href="#sobre" class="btn-outline">Ler mais</a>
             </div>
           </article>
 
           <article class="card">
             <div class="thumb t6" aria-hidden="true">
-              <span class="g g1"></span>
-              <span class="g g2"></span>
-              <span class="g g3"></span>
+              <span class="glow g1"></span>
+              <span class="panel p1"></span>
+              <span class="panel p2"></span>
+              <span class="line l1"></span>
+              <span class="ring r1"></span>
             </div>
             <div class="card-body">
-              <h3 class="card-title">Seleção digital</h3>
+              <div class="card-meta">
+                <span class="badge">Internet</span>
+                <span class="reading-time">3 min</span>
+              </div>
+              <h3 class="card-title">O crescimento dos conteúdos rápidos nas redes sociais</h3>
               <p class="card-text">
-                Conteúdos escolhidos para quem gosta de acompanhar o que está em alta.
+                Plataformas digitais impulsionaram o consumo de conteúdos curtos e visuais.
               </p>
+              <a href="#publicacoes" class="btn-outline">Ler mais</a>
             </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="publicacoes">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Atualizações editoriais</span>
+            <h2>Últimas publicações</h2>
+          </div>
+        </div>
+
+        <div class="posts-grid">
+          <article class="post-card">
+            <div class="post-top" aria-hidden="true"></div>
+            <h3>Por que certos conteúdos chamam tanta atenção online</h3>
+            <p>
+              A combinação entre curiosidade, imagem forte e timing pode transformar conteúdos simples em fenômenos virais.
+            </p>
+          </article>
+
+          <article class="post-card">
+            <div class="post-top" aria-hidden="true"></div>
+            <h3>Como tendências surgem e se espalham na internet</h3>
+            <p>
+              Redes sociais aceleram a circulação de ideias, imagens e vídeos em escala global.
+            </p>
+          </article>
+
+          <article class="post-card">
+            <div class="post-top" aria-hidden="true"></div>
+            <h3>O impacto da cultura digital no consumo de conteúdo</h3>
+            <p>
+              A maneira como as pessoas consomem informação mudou drasticamente nos últimos anos.
+            </p>
           </article>
         </div>
       </div>
@@ -976,6 +1245,30 @@
       </div>
     </section>
 
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Institucional</span>
+            <h2>Sobre este portal</h2>
+          </div>
+        </div>
+
+        <div class="about-panel">
+          <h3>Informação digital com navegação simples e visual editorial</h3>
+          <p>
+            Este portal reúne conteúdos informativos sobre tendências digitais, cultura da internet e comportamento online.
+          </p>
+          <p>
+            Nosso objetivo é apresentar temas que estão circulando nas redes sociais e destacar conteúdos que despertam curiosidade entre usuários da internet.
+          </p>
+          <p>
+            Atualizamos regularmente os destaques para oferecer uma navegação simples e informativa.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="explorar">
       <div class="container">
         <div class="section-head">
@@ -1032,6 +1325,12 @@
 
   <footer class="footer">
     <div class="container footer-wrap">
+      <nav class="footer-links" aria-label="Links institucionais">
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+        <a href="#privacidade">Política de Privacidade</a>
+        <a href="#termos">Termos de Uso</a>
+      </nav>
       <p>
         Portal de conteúdo digital<br />
         Atualizado regularmente
