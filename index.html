@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veja Agora</title>
+  <title>Veja Agora | Destaques e Notícias</title>
   <meta
     name="description"
-    content="Confira os destaques disponíveis nesta página. Explore os conteúdos mais acessados e veja o que está chamando atenção agora."
+    content="Confira notícias, tendências e destaques organizados de forma visual, rápida e chamativa."
   />
   <style>
     :root {
@@ -20,11 +20,10 @@
       --red: #ff234f;
       --pink: #ff4fd8;
       --rose: #ff7aa8;
-      --neon: #ff2f87;
+      --purple: #7e19ff;
       --shadow: 0 18px 45px rgba(255, 35, 79, 0.22);
       --shadow-soft: 0 10px 30px rgba(255, 79, 216, 0.12);
       --radius: 22px;
-      --radius-sm: 16px;
       --max: 1180px;
     }
 
@@ -55,16 +54,14 @@
     body::after {
       content: "";
       position: fixed;
-      inset: auto;
       pointer-events: none;
       z-index: 0;
-      opacity: 0.2;
-      filter: blur(1px);
+      opacity: 0.22;
     }
 
     body::before {
-      top: 8%;
-      left: -30px;
+      top: 7%;
+      left: -34px;
       width: 170px;
       height: 240px;
       background:
@@ -78,8 +75,8 @@
     }
 
     body::after {
-      right: -30px;
-      bottom: 18%;
+      right: -28px;
+      bottom: 16%;
       width: 180px;
       height: 250px;
       background:
@@ -102,61 +99,16 @@
       z-index: 1;
       width: min(100%, var(--max));
       margin: 0 auto;
-      padding: 18px 16px 34px;
-    }
-
-    .glow-line {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,79,216,0.7), rgba(255,35,79,0.8), transparent);
-      box-shadow: 0 0 25px rgba(255, 79, 216, 0.35);
-      opacity: 0.8;
-    }
-
-    .section {
-      margin-top: 22px;
-      padding: 24px 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 28px;
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(10px);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .section::before {
-      content: "";
-      position: absolute;
-      top: -60px;
-      right: -60px;
-      width: 140px;
-      height: 140px;
-      background: radial-gradient(circle, rgba(255,79,216,0.18), transparent 65%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .section::after {
-      content: "";
-      position: absolute;
-      bottom: -70px;
-      left: -60px;
-      width: 160px;
-      height: 160px;
-      background: radial-gradient(circle, rgba(255,35,79,0.14), transparent 65%);
-      border-radius: 50%;
-      pointer-events: none;
+      padding: 18px 16px 40px;
     }
 
     .hero {
-      min-height: calc(100vh - 36px);
+      min-height: 88vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 26px 0 18px;
-      position: relative;
+      padding: 24px 0 18px;
     }
 
     .hero-box {
@@ -228,7 +180,7 @@
     }
 
     .hero p {
-      max-width: 650px;
+      max-width: 680px;
       margin: 0 auto;
       font-size: 1rem;
       line-height: 1.65;
@@ -249,9 +201,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      min-height: 54px;
-      padding: 0 22px;
+      min-height: 56px;
+      padding: 0 24px;
       border: none;
       border-radius: 999px;
       background: linear-gradient(135deg, var(--red), var(--pink));
@@ -273,7 +224,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.2) 50%, transparent 80%);
+      background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.18) 50%, transparent 80%);
       transform: translateX(-120%);
       transition: transform 0.5s ease;
     }
@@ -284,7 +235,7 @@
       box-shadow:
         0 20px 48px rgba(255, 35, 79, 0.34),
         0 0 38px rgba(255, 79, 216, 0.22);
-      filter: saturate(1.1);
+      filter: saturate(1.08);
       outline: none;
     }
 
@@ -297,6 +248,42 @@
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.12);
       box-shadow: 0 12px 30px rgba(0,0,0,0.28);
+    }
+
+    .section {
+      margin-top: 22px;
+      padding: 24px 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section::before {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, rgba(255,79,216,0.18), transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .section::after {
+      content: "";
+      position: absolute;
+      bottom: -70px;
+      left: -60px;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(255,35,79,0.14), transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
     }
 
     .section-head {
@@ -337,6 +324,8 @@
       overflow: hidden;
       box-shadow: 0 18px 34px rgba(0,0,0,0.24);
       transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+      display: flex;
+      flex-direction: column;
     }
 
     .card:hover {
@@ -348,7 +337,7 @@
     }
 
     .thumb {
-      height: 170px;
+      height: 175px;
       position: relative;
       background:
         radial-gradient(circle at 18% 20%, rgba(255,255,255,0.16), transparent 15%),
@@ -400,35 +389,50 @@
       backdrop-filter: blur(6px);
     }
 
-    .thumb-wave {
+    .thumb-title {
       position: absolute;
-      left: -10%;
-      right: -10%;
-      bottom: -18%;
-      height: 60%;
-      background:
-        radial-gradient(ellipse at center, rgba(255,255,255,0.16), transparent 58%),
-        linear-gradient(180deg, rgba(255,255,255,0.08), transparent);
-      border-radius: 50%;
-      transform: rotate(-5deg);
-      opacity: 0.8;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      font-size: 1rem;
+      font-weight: 900;
+      line-height: 1.2;
+      text-shadow: 0 8px 18px rgba(0,0,0,0.45);
     }
 
     .card-body {
       padding: 18px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .category {
+      display: inline-block;
+      align-self: flex-start;
+      margin-bottom: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #fff;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .card-body h3 {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 900;
       margin-bottom: 10px;
+      line-height: 1.35;
     }
 
     .card-body p {
       color: var(--muted);
-      line-height: 1.58;
+      line-height: 1.6;
       font-size: 0.95rem;
-      min-height: 48px;
     }
 
     .card-actions {
@@ -436,16 +440,57 @@
       display: flex;
     }
 
-    .text-section {
+    .info-block {
       text-align: center;
     }
 
-    .text-section p {
+    .info-block p {
       max-width: 770px;
       margin: 0 auto;
       color: var(--muted);
       line-height: 1.78;
       font-size: 1rem;
+    }
+
+    .list-highlights {
+      margin-top: 20px;
+      display: grid;
+      gap: 12px;
+      text-align: left;
+      position: relative;
+      z-index: 1;
+    }
+
+    .list-item {
+      padding: 16px 16px 16px 18px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .list-item .dot {
+      width: 10px;
+      height: 10px;
+      min-width: 10px;
+      border-radius: 50%;
+      margin-top: 7px;
+      background: linear-gradient(135deg, var(--red), var(--pink));
+      box-shadow: 0 0 16px rgba(255, 79, 216, 0.45);
+    }
+
+    .list-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.98rem;
+    }
+
+    .list-item span {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.93rem;
     }
 
     .feature-list {
@@ -574,13 +619,8 @@
 
       .section-head p,
       .hero p,
-      .text-section p {
+      .info-block p {
         font-size: 1.03rem;
-      }
-
-      .btn {
-        min-height: 56px;
-        padding: 0 26px;
       }
     }
 
@@ -600,7 +640,7 @@
   <main class="page">
     <section class="hero" aria-label="Hero principal">
       <div class="hero-box">
-        <div class="eyebrow">Em destaque agora</div>
+        <div class="eyebrow">Destaques, notícias e tendências</div>
 
         <div class="hero-title" aria-label="Veja agora">
           <span class="line">VEJA</span>
@@ -617,8 +657,6 @@
       </div>
     </section>
 
-    <div class="glow-line" aria-hidden="true"></div>
-
     <section class="section" id="em-alta" aria-labelledby="titulo-em-alta">
       <div class="section-head">
         <h2 id="titulo-em-alta">Em alta agora</h2>
@@ -628,14 +666,19 @@
       <div class="cards-grid">
         <article class="card">
           <div class="thumb">
-            <span class="thumb-label">Destaque visual</span>
-            <div class="thumb-wave" aria-hidden="true"></div>
+            <span class="thumb-label">Tecnologia</span>
+            <div class="thumb-title">IA no dia a dia ganha espaço entre estudo, trabalho e criação</div>
           </div>
           <div class="card-body">
-            <h3>Destaque 01</h3>
-            <p>Conteúdo em evidência com alto interesse do público.</p>
+            <span class="category">Destaque 01</span>
+            <h3>Ferramentas de inteligência artificial deixaram de ser tendência e passaram a fazer parte da rotina.</h3>
+            <p>
+              Aplicativos para escrever, resumir textos, organizar tarefas e gerar imagens estão sendo usados por estudantes,
+              profissionais autônomos e pequenas equipes. O interesse cresceu porque essas soluções economizam tempo,
+              ajudam na produtividade e tornam processos mais visuais e rápidos.
+            </p>
             <div class="card-actions">
-              <a href="#final" class="btn alt">Ver agora</a>
+              <a href="#noticia-1" class="btn alt">Ver agora</a>
             </div>
           </div>
         </article>
@@ -645,14 +688,19 @@
             radial-gradient(circle at 22% 18%, rgba(255,255,255,0.15), transparent 15%),
             radial-gradient(circle at 78% 28%, rgba(255,255,255,0.1), transparent 16%),
             linear-gradient(135deg, rgba(255,79,216,0.95), rgba(126,25,255,0.88) 50%, rgba(255,35,79,0.92));">
-            <span class="thumb-label">Visual em alta</span>
-            <div class="thumb-wave" aria-hidden="true"></div>
+            <span class="thumb-label">Redes sociais</span>
+            <div class="thumb-title">Vídeos curtos seguem dominando atenção e descoberta de conteúdo</div>
           </div>
           <div class="card-body">
-            <h3>Destaque 02</h3>
-            <p>Um dos conteúdos mais visualizados neste momento.</p>
+            <span class="category">Destaque 02</span>
+            <h3>Conteúdo rápido, visual e direto continua sendo o formato mais forte para alcance e engajamento.</h3>
+            <p>
+              Plataformas baseadas em vídeos curtos seguem puxando tendências, lançando criadores e acelerando a viralização
+              de temas que misturam entretenimento, curiosidade e informação. O público responde melhor quando o conteúdo
+              entrega impacto imediato logo nos primeiros segundos.
+            </p>
             <div class="card-actions">
-              <a href="#final" class="btn alt">Ver agora</a>
+              <a href="#noticia-2" class="btn alt">Ver agora</a>
             </div>
           </div>
         </article>
@@ -662,14 +710,19 @@
             radial-gradient(circle at 18% 20%, rgba(255,255,255,0.14), transparent 15%),
             radial-gradient(circle at 80% 32%, rgba(255,255,255,0.11), transparent 16%),
             linear-gradient(135deg, rgba(255,35,79,0.96), rgba(255,122,168,0.9) 48%, rgba(255,79,216,0.9));">
-            <span class="thumb-label">Atualizado</span>
-            <div class="thumb-wave" aria-hidden="true"></div>
+            <span class="thumb-label">Consumo digital</span>
+            <div class="thumb-title">Páginas mais objetivas convertem melhor no mobile</div>
           </div>
           <div class="card-body">
-            <h3>Destaque 03</h3>
-            <p>Seleção atualizada com temas que chamam atenção.</p>
+            <span class="category">Destaque 03</span>
+            <h3>Design direto, leitura rápida e botões claros se tornaram essenciais para quem chega por anúncio.</h3>
+            <p>
+              Usuários que entram por campanhas pagas esperam encontrar de imediato o que o criativo prometeu.
+              Por isso, landing pages com visual forte, texto enxuto, hierarquia clara e seções bem divididas
+              costumam gerar mais permanência e menos abandono.
+            </p>
             <div class="card-actions">
-              <a href="#final" class="btn alt">Ver agora</a>
+              <a href="#noticia-3" class="btn alt">Ver agora</a>
             </div>
           </div>
         </article>
@@ -679,14 +732,19 @@
             radial-gradient(circle at 20% 20%, rgba(255,255,255,0.14), transparent 15%),
             radial-gradient(circle at 82% 25%, rgba(255,255,255,0.11), transparent 16%),
             linear-gradient(135deg, rgba(126,25,255,0.88), rgba(255,79,216,0.9) 50%, rgba(255,35,79,0.92));">
-            <span class="thumb-label">Acesso rápido</span>
-            <div class="thumb-wave" aria-hidden="true"></div>
+            <span class="thumb-label">Criadores</span>
+            <div class="thumb-title">Autoridade digital hoje depende de consistência visual e clareza</div>
           </div>
           <div class="card-body">
-            <h3>Destaque 04</h3>
-            <p>Acesso rápido a um dos conteúdos mais procurados.</p>
+            <span class="category">Destaque 04</span>
+            <h3>Não basta publicar com frequência: a percepção visual também define o valor de um perfil ou projeto.</h3>
+            <p>
+              Perfis que mantêm identidade forte, linguagem simples e proposta clara conseguem gerar reconhecimento
+              mais rápido. Em um ambiente disputado, o visual ajuda a prender atenção, enquanto a clareza da mensagem
+              faz o usuário entender por que deve continuar navegando.
+            </p>
             <div class="card-actions">
-              <a href="#final" class="btn alt">Ver agora</a>
+              <a href="#noticia-4" class="btn alt">Ver agora</a>
             </div>
           </div>
         </article>
@@ -696,14 +754,19 @@
             radial-gradient(circle at 17% 18%, rgba(255,255,255,0.15), transparent 15%),
             radial-gradient(circle at 81% 31%, rgba(255,255,255,0.1), transparent 16%),
             linear-gradient(135deg, rgba(255,35,79,0.95), rgba(255,79,216,0.88) 56%, rgba(255,160,200,0.82));">
-            <span class="thumb-label">Popular</span>
-            <div class="thumb-wave" aria-hidden="true"></div>
+            <span class="thumb-label">Privacidade</span>
+            <div class="thumb-title">Segurança digital entra na rotina de quem compra, cria e navega</div>
           </div>
           <div class="card-body">
-            <h3>Destaque 05</h3>
-            <p>Mais um conteúdo popular disponível na página.</p>
+            <span class="category">Destaque 05</span>
+            <h3>Golpes, links falsos e excesso de exposição fizeram o tema sair do nicho e virar prioridade.</h3>
+            <p>
+              A preocupação com senhas, autenticação em duas etapas, controle de dados e verificação de links
+              aumentou porque mais pessoas dependem do ambiente online para trabalhar, estudar e consumir.
+              Pequenos cuidados já fazem diferença no uso diário da internet.
+            </p>
             <div class="card-actions">
-              <a href="#final" class="btn alt">Ver agora</a>
+              <a href="#noticia-5" class="btn alt">Ver agora</a>
             </div>
           </div>
         </article>
@@ -713,21 +776,26 @@
             radial-gradient(circle at 20% 20%, rgba(255,255,255,0.14), transparent 15%),
             radial-gradient(circle at 80% 28%, rgba(255,255,255,0.1), transparent 16%),
             linear-gradient(135deg, rgba(255,79,216,0.94), rgba(255,35,79,0.9) 45%, rgba(126,25,255,0.86));">
-            <span class="thumb-label">Recente</span>
-            <div class="thumb-wave" aria-hidden="true"></div>
+            <span class="thumb-label">Tendências</span>
+            <div class="thumb-title">Experiências visuais premium se tornaram diferencial até em páginas simples</div>
           </div>
           <div class="card-body">
-            <h3>Destaque 06</h3>
-            <p>Confira outro item em destaque atualizado recentemente.</p>
+            <span class="category">Destaque 06</span>
+            <h3>Sombras, brilho, contraste e composição forte deixaram de ser detalhe e viraram estratégia.</h3>
+            <p>
+              Marcas e criadores perceberam que uma boa primeira impressão acontece em milésimos de segundo.
+              Por isso, páginas com estética mais marcante, visual limpo e sensação de movimento geram
+              curiosidade maior e passam uma imagem mais profissional.
+            </p>
             <div class="card-actions">
-              <a href="#final" class="btn alt">Ver agora</a>
+              <a href="#noticia-6" class="btn alt">Ver agora</a>
             </div>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="section text-section" aria-labelledby="titulo-explicacao">
+    <section class="section info-block" aria-labelledby="titulo-explicacao">
       <div class="section-head">
         <h2 id="titulo-explicacao">O que você encontra aqui</h2>
       </div>
@@ -736,6 +804,130 @@
         O objetivo é facilitar a visualização dos itens mais procurados do momento em um só lugar.
         Tudo foi disposto para oferecer uma navegação rápida, clara e direta.
       </p>
+
+      <div class="list-highlights">
+        <div class="list-item">
+          <div class="dot"></div>
+          <div>
+            <strong>Leitura rápida e objetiva</strong>
+            <span>Os conteúdos são apresentados em blocos curtos, com títulos fortes e textos fáceis de escanear no celular.</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="dot"></div>
+          <div>
+            <strong>Temas de interesse amplo</strong>
+            <span>Há espaço para tendências digitais, comportamento online, novidades visuais, tecnologia e assuntos que despertam curiosidade.</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="dot"></div>
+          <div>
+            <strong>Estrutura pronta para destaque editorial</strong>
+            <span>A página já nasce com aparência de portal moderno, sem parecer vazia, genérica ou desconectada do anúncio.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="titulo-noticias">
+      <div class="section-head">
+        <h2 id="titulo-noticias">Leituras rápidas</h2>
+        <p>Uma seleção com textos curtos e informativos para deixar a página com conteúdo real e navegação mais rica.</p>
+      </div>
+
+      <div class="feature-list">
+        <article class="feature-row" id="noticia-1">
+          <div class="feature-copy">
+            <h3>Como a IA entrou de vez na rotina comum</h3>
+            <p>
+              O uso de inteligência artificial deixou de ser assunto restrito a empresas de tecnologia.
+              Hoje, pessoas usam recursos de automação para organizar estudos, revisar textos, gerar ideias,
+              resumir conteúdos extensos e até montar apresentações com mais velocidade.
+              O crescimento desse comportamento mostra que conveniência e ganho de tempo têm pesado cada vez mais
+              na escolha das ferramentas digitais.
+            </p>
+          </div>
+          <div class="feature-action">
+            <a href="#final" class="btn alt">Acessar</a>
+          </div>
+        </article>
+
+        <article class="feature-row" id="noticia-2">
+          <div class="feature-copy">
+            <h3>Por que o vídeo curto continua tão forte</h3>
+            <p>
+              O sucesso do formato está na combinação entre velocidade, impacto visual e facilidade de consumo.
+              Em poucos segundos, o usuário decide se continua assistindo ou desliza para o próximo vídeo.
+              Isso fez com que criadores, marcas e páginas editoriais passassem a investir mais em aberturas fortes,
+              legendas objetivas e ritmo intenso para manter retenção e ampliar alcance.
+            </p>
+          </div>
+          <div class="feature-action">
+            <a href="#final" class="btn alt">Acessar</a>
+          </div>
+        </article>
+
+        <article class="feature-row" id="noticia-3">
+          <div class="feature-copy">
+            <h3>Landing page boa precisa cumprir a promessa do anúncio</h3>
+            <p>
+              Quando uma pessoa sai de um anúncio e entra em uma página, ela espera coerência imediata.
+              Isso significa manter tom visual semelhante, repetir a sensação do criativo e apresentar logo no topo
+              algo que faça sentido com a chamada que despertou o clique.
+              Quanto menor o atrito entre anúncio e destino, maior a chance de engajamento.
+            </p>
+          </div>
+          <div class="feature-action">
+            <a href="#final" class="btn alt">Acessar</a>
+          </div>
+        </article>
+
+        <article class="feature-row" id="noticia-4">
+          <div class="feature-copy">
+            <h3>Visual forte ajuda a passar valor antes mesmo da leitura</h3>
+            <p>
+              Cores vibrantes, contraste alto, tipografia pesada e uma boa hierarquia visual influenciam
+              a percepção de qualidade. Mesmo antes de ler o texto, o usuário já forma uma impressão sobre
+              profissionalismo, urgência e relevância. Esse efeito é ainda mais importante em dispositivos móveis,
+              onde a atenção é disputada a todo instante.
+            </p>
+          </div>
+          <div class="feature-action">
+            <a href="#final" class="btn alt">Acessar</a>
+          </div>
+        </article>
+
+        <article class="feature-row" id="noticia-5">
+          <div class="feature-copy">
+            <h3>Privacidade digital virou hábito, não só preocupação</h3>
+            <p>
+              Com mais contas, mais compras online e mais uso de plataformas sociais, cresceu também
+              a necessidade de comportamento preventivo. Hoje, muita gente já entende a importância de senhas fortes,
+              verificação em duas etapas e cautela com links suspeitos. Esse cuidado se tornou parte da rotina básica
+              de quem quer navegar com mais segurança e menos risco.
+            </p>
+          </div>
+          <div class="feature-action">
+            <a href="#final" class="btn alt">Acessar</a>
+          </div>
+        </article>
+
+        <article class="feature-row" id="noticia-6">
+          <div class="feature-copy">
+            <h3>Experiência visual premium não é exagero, é estratégia</h3>
+            <p>
+              Em ambientes de alta concorrência, páginas neutras demais tendem a desaparecer no meio de tantas outras.
+              Já uma composição mais forte, com brilho, profundidade, ritmo e organização, consegue gerar mais curiosidade
+              e dar sensação de novidade. Não se trata apenas de beleza, mas de prender atenção tempo suficiente
+              para a mensagem principal ser entendida.
+            </p>
+          </div>
+          <div class="feature-action">
+            <a href="#final" class="btn alt">Acessar</a>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section class="section" aria-labelledby="titulo-mais-destaques">
@@ -748,7 +940,10 @@
         <article class="feature-row">
           <div class="feature-copy">
             <h3>Conteúdo em destaque</h3>
-            <p>Atualizado com frequência para manter a página sempre dinâmica.</p>
+            <p>
+              Atualizado com frequência para manter a página sempre dinâmica.
+              A ideia é apresentar temas que despertem curiosidade logo no primeiro contato.
+            </p>
           </div>
           <div class="feature-action">
             <a href="#final" class="btn alt">Acessar</a>
@@ -758,7 +953,10 @@
         <article class="feature-row">
           <div class="feature-copy">
             <h3>Seleção do momento</h3>
-            <p>Itens apresentados de forma visual para facilitar a navegação.</p>
+            <p>
+              Itens apresentados de forma visual para facilitar a navegação.
+              Tudo foi pensado para leitura rápida, especialmente em telas menores.
+            </p>
           </div>
           <div class="feature-action">
             <a href="#final" class="btn alt">Acessar</a>
@@ -768,7 +966,10 @@
         <article class="feature-row">
           <div class="feature-copy">
             <h3>Mais visualizados</h3>
-            <p>Uma área pensada para mostrar rapidamente o que mais chama atenção.</p>
+            <p>
+              Uma área pensada para mostrar rapidamente o que mais chama atenção.
+              Ideal para manter a sensação de movimento e descoberta dentro da página.
+            </p>
           </div>
           <div class="feature-action">
             <a href="#final" class="btn alt">Acessar</a>
@@ -779,10 +980,10 @@
 
     <section class="section final-cta" id="final" aria-labelledby="titulo-cta-final">
       <div class="section-head">
-        <h2 id="titulo-cta-final">Pronto para explorar?</h2>
+        <h2 id="titulo-cta-final">ACESSAR AGORA</h2>
       </div>
 
-      <a href="#topo" class="btn">ACESSAR AGORA</a>
+      <a href="#em-alta" class="btn">ACESSAR AGORA</a>
 
       <div class="mini-points">
         <span>Conteúdos em destaque</span>
