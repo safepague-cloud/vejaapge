@@ -3,32 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veja Agora | Destaques sobre mulheres e animais</title>
+  <title>Veja Agora</title>
   <meta
     name="description"
-    content="Landing page visual com destaques sobre mulheres e animais, estilo escuro, moderno, intenso e pronta para publicação na Vercel."
+    content="Confira os destaques disponíveis nesta página. Explore os conteúdos mais acessados e veja o que está chamando atenção agora."
   />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Veja Agora | Destaques sobre mulheres e animais" />
-  <meta
-    property="og:description"
-    content="Confira os destaques disponíveis abaixo com conteúdos visuais sobre mulheres, natureza, comportamento animal e histórias inspiradoras."
-  />
-  <meta property="og:locale" content="pt_BR" />
-  <meta name="theme-color" content="#090909" />
   <style>
     :root {
-      --bg: #050505;
-      --bg-soft: #0c0c10;
-      --card: rgba(255, 255, 255, 0.04);
-      --text: #ffffff;
-      --muted: #b9b9c7;
-      --line: rgba(255, 255, 255, 0.1);
-      --red: #ff244f;
-      --red-strong: #ff003c;
-      --pink: #ff4f87;
-      --shadow: 0 20px 60px rgba(255, 0, 76, 0.18);
+      --bg: #050507;
+      --bg-soft: #0d0d14;
+      --card: rgba(255, 255, 255, 0.05);
+      --card-strong: rgba(255, 255, 255, 0.08);
+      --white: #ffffff;
+      --muted: #d7d7df;
+      --muted-2: #9b9bab;
+      --red: #ff234f;
+      --pink: #ff4fd8;
+      --rose: #ff7aa8;
+      --neon: #ff2f87;
+      --shadow: 0 18px 45px rgba(255, 35, 79, 0.22);
+      --shadow-soft: 0 10px 30px rgba(255, 79, 216, 0.12);
       --radius: 22px;
+      --radius-sm: 16px;
       --max: 1180px;
     }
 
@@ -43,198 +39,322 @@
     }
 
     body {
-      min-height: 100vh;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at 20% 0%, rgba(255, 36, 79, 0.18), transparent 24%),
-        radial-gradient(circle at 85% 10%, rgba(255, 79, 135, 0.12), transparent 28%),
-        radial-gradient(circle at 50% 100%, rgba(255, 0, 60, 0.12), transparent 35%),
-        linear-gradient(180deg, #030303 0%, #09090b 45%, #050505 100%);
-      line-height: 1.5;
+        radial-gradient(circle at 15% 20%, rgba(255, 79, 216, 0.18), transparent 22%),
+        radial-gradient(circle at 85% 12%, rgba(255, 35, 79, 0.16), transparent 24%),
+        radial-gradient(circle at 50% 80%, rgba(255, 122, 168, 0.14), transparent 28%),
+        linear-gradient(180deg, #020203 0%, #07070a 38%, #090913 100%);
+      color: var(--white);
+      min-height: 100vh;
       overflow-x: hidden;
+      position: relative;
     }
 
     body::before,
     body::after {
       content: "";
       position: fixed;
-      inset: 0;
+      inset: auto;
       pointer-events: none;
       z-index: 0;
+      opacity: 0.2;
+      filter: blur(1px);
     }
 
     body::before {
+      top: 8%;
+      left: -30px;
+      width: 170px;
+      height: 240px;
       background:
-        linear-gradient(115deg, transparent 0 46%, rgba(255,255,255,0.03) 46.5%, transparent 47%, transparent 100%),
-        linear-gradient(65deg, transparent 0 72%, rgba(255, 0, 60, 0.04) 72.5%, transparent 73%, transparent 100%);
-      mix-blend-mode: screen;
-      opacity: 0.6;
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,0.05) 0 12%, transparent 13%),
+        radial-gradient(circle at 70% 24%, rgba(255,255,255,0.05) 0 12%, transparent 13%),
+        radial-gradient(circle at 50% 48%, rgba(255,255,255,0.04) 0 11%, transparent 12%),
+        linear-gradient(145deg, rgba(255,79,216,0.22), rgba(255,35,79,0.02));
+      border-radius: 54% 46% 60% 40% / 50% 50% 50% 50%;
+      transform: rotate(-18deg);
+      box-shadow: 0 0 60px rgba(255, 79, 216, 0.15);
     }
 
     body::after {
-      background-image: radial-gradient(rgba(255,255,255,0.05) 0.7px, transparent 0.7px);
-      background-size: 18px 18px;
-      opacity: 0.15;
+      right: -30px;
+      bottom: 18%;
+      width: 180px;
+      height: 250px;
+      background:
+        radial-gradient(circle at 34% 26%, rgba(255,255,255,0.05) 0 12%, transparent 13%),
+        radial-gradient(circle at 70% 25%, rgba(255,255,255,0.05) 0 12%, transparent 13%),
+        radial-gradient(circle at 52% 50%, rgba(255,255,255,0.04) 0 12%, transparent 13%),
+        linear-gradient(145deg, rgba(255,35,79,0.22), rgba(255,79,216,0.03));
+      border-radius: 42% 58% 45% 55% / 44% 48% 52% 56%;
+      transform: rotate(15deg);
+      box-shadow: 0 0 60px rgba(255, 35, 79, 0.16);
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
 
     .page {
       position: relative;
       z-index: 1;
-    }
-
-    .container {
-      width: min(100% - 1.4rem, var(--max));
+      width: min(100%, var(--max));
       margin: 0 auto;
+      padding: 18px 16px 34px;
     }
 
-    .hero {
-      padding: 3.2rem 0 2rem;
+    .glow-line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,79,216,0.7), rgba(255,35,79,0.8), transparent);
+      box-shadow: 0 0 25px rgba(255, 79, 216, 0.35);
+      opacity: 0.8;
+    }
+
+    .section {
+      margin-top: 22px;
+      padding: 24px 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(10px);
       position: relative;
       overflow: hidden;
     }
 
-    .hero::before,
-    .hero::after {
+    .section::before {
       content: "";
       position: absolute;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      filter: blur(45px);
-      opacity: 0.35;
-      z-index: -1;
-    }
-
-    .hero::before {
-      top: -50px;
-      left: -70px;
-      background: rgba(255, 0, 60, 0.28);
-    }
-
-    .hero::after {
+      top: -60px;
       right: -60px;
-      top: 30px;
-      background: rgba(255, 79, 135, 0.22);
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, rgba(255,79,216,0.18), transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .section::after {
+      content: "";
+      position: absolute;
+      bottom: -70px;
+      left: -60px;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(255,35,79,0.14), transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero {
+      min-height: calc(100vh - 36px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 26px 0 18px;
+      position: relative;
     }
 
     .hero-box {
-      max-width: 820px;
-      margin: 0 auto;
-      text-align: center;
-      padding: 1rem 0 0;
+      width: 100%;
+      max-width: 860px;
+      padding: 30px 18px;
+      border-radius: 32px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)),
+        radial-gradient(circle at top, rgba(255,79,216,0.14), transparent 30%);
+      border: 1px solid rgba(255,255,255,0.09);
+      box-shadow:
+        0 25px 80px rgba(0,0,0,0.55),
+        0 0 0 1px rgba(255,255,255,0.02) inset;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.03) 35%, transparent 60%),
+        radial-gradient(circle at 50% 0%, rgba(255,35,79,0.12), transparent 42%);
+      pointer-events: none;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      min-height: 36px;
-      padding: 0.45rem 0.85rem;
+      gap: 8px;
+      padding: 8px 14px;
+      margin-bottom: 18px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #ffd6e3;
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 16px 40px rgba(255, 0, 76, 0.16);
-      margin-bottom: 1.1rem;
+      color: var(--white);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 0 25px rgba(255, 79, 216, 0.12);
     }
 
     .hero-title {
-      font-size: clamp(3rem, 13vw, 6.8rem);
-      line-height: 0.92;
-      letter-spacing: -0.06em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      line-height: 0.95;
       font-weight: 900;
       text-transform: uppercase;
-      text-shadow:
-        0 0 8px rgba(255,255,255,0.16),
-        0 0 24px rgba(255, 36, 79, 0.25),
-        0 0 42px rgba(255, 0, 60, 0.18);
+      margin-bottom: 18px;
+      letter-spacing: 0.02em;
     }
 
     .hero-title .line {
-      display: block;
+      font-size: clamp(3rem, 12vw, 6.5rem);
+      text-shadow:
+        0 0 22px rgba(255,255,255,0.16),
+        0 0 38px rgba(255,79,216,0.2),
+        0 0 56px rgba(255,35,79,0.16);
     }
 
-    .hero-title .emoji {
-      display: block;
-      font-size: clamp(2.4rem, 10vw, 4.8rem);
-      margin: 0.2rem 0 0.35rem;
-      filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.22))
-              drop-shadow(0 0 30px rgba(255, 79, 135, 0.18));
+    .hero-title .eye {
+      font-size: clamp(2.4rem, 9vw, 4.8rem);
+      filter: drop-shadow(0 0 16px rgba(255, 79, 216, 0.5));
     }
 
-    .hero-subtitle {
-      max-width: 680px;
-      margin: 1rem auto 0;
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.65;
       color: var(--muted);
-      font-size: clamp(1rem, 2.9vw, 1.12rem);
     }
 
-    .section {
-      padding: 1.2rem 0 2rem;
+    .hero p + p {
+      margin-top: 2px;
+    }
+
+    .cta-wrap {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 22px;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--red), var(--pink));
+      color: var(--white);
+      font-size: 0.98rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      box-shadow:
+        0 16px 40px rgba(255, 35, 79, 0.28),
+        0 0 30px rgba(255, 79, 216, 0.18);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.2) 50%, transparent 80%);
+      transform: translateX(-120%);
+      transition: transform 0.5s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow:
+        0 20px 48px rgba(255, 35, 79, 0.34),
+        0 0 38px rgba(255, 79, 216, 0.22);
+      filter: saturate(1.1);
+      outline: none;
+    }
+
+    .btn:hover::before,
+    .btn:focus-visible::before {
+      transform: translateX(120%);
+    }
+
+    .btn.alt {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.28);
     }
 
     .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-      flex-wrap: wrap;
+      text-align: center;
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
     }
 
-    .section-title {
-      font-size: clamp(1.35rem, 4vw, 2rem);
-      line-height: 1.05;
+    .section-head h2 {
+      font-size: clamp(1.65rem, 5vw, 2.5rem);
       font-weight: 900;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+      text-shadow: 0 0 18px rgba(255, 79, 216, 0.15);
     }
 
-    .section-note {
+    .section-head p {
+      max-width: 700px;
+      margin: 0 auto;
       color: var(--muted);
-      font-size: 0.95rem;
+      line-height: 1.65;
+      font-size: 0.98rem;
     }
 
-    .grid {
+    .cards-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      position: relative;
+      z-index: 1;
     }
 
     .card {
-      position: relative;
-      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
-      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255,255,255,0.08);
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(12px);
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 18px 34px rgba(0,0,0,0.24);
+      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(255, 79, 135, 0.26);
-      box-shadow: 0 26px 60px rgba(255, 0, 60, 0.22);
+      transform: translateY(-4px);
+      border-color: rgba(255,79,216,0.28);
+      box-shadow:
+        0 24px 42px rgba(0,0,0,0.3),
+        0 0 28px rgba(255, 79, 216, 0.08);
     }
 
     .thumb {
+      height: 170px;
       position: relative;
-      min-height: 220px;
-      overflow: hidden;
       background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 18%),
-        linear-gradient(135deg, rgba(255, 0, 60, 0.95), rgba(255, 79, 135, 0.82) 55%, rgba(20, 20, 24, 1) 100%);
+        radial-gradient(circle at 18% 20%, rgba(255,255,255,0.16), transparent 15%),
+        radial-gradient(circle at 80% 30%, rgba(255,255,255,0.12), transparent 16%),
+        linear-gradient(135deg, rgba(255,35,79,0.92), rgba(255,79,216,0.9) 52%, rgba(126,25,255,0.86));
+      overflow: hidden;
     }
 
     .thumb::before {
@@ -242,623 +362,439 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(135deg, transparent 0 35%, rgba(255,255,255,0.05) 35.5%, transparent 36%),
-        linear-gradient(25deg, transparent 0 62%, rgba(255,255,255,0.05) 62.5%, transparent 63%);
+        linear-gradient(130deg, transparent 0 30%, rgba(255,255,255,0.14) 31% 34%, transparent 35% 100%),
+        radial-gradient(circle at 68% 66%, rgba(0,0,0,0.35), transparent 34%);
       mix-blend-mode: screen;
-      opacity: 0.8;
     }
 
     .thumb::after {
       content: "";
       position: absolute;
-      inset: auto -40px -55px auto;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.18), transparent 60%);
-      filter: blur(8px);
-      opacity: 0.8;
-    }
-
-    .thumb-inner {
-      position: absolute;
-      inset: 14px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.13);
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+      width: 130px;
+      height: 130px;
+      right: -16px;
+      bottom: -18px;
+      background:
+        radial-gradient(circle at 30% 24%, rgba(255,255,255,0.22) 0 10%, transparent 11%),
+        radial-gradient(circle at 68% 24%, rgba(255,255,255,0.22) 0 10%, transparent 11%),
+        radial-gradient(circle at 50% 52%, rgba(255,255,255,0.15) 0 12%, transparent 13%),
+        linear-gradient(145deg, rgba(0,0,0,0.18), rgba(255,255,255,0.02));
+      border-radius: 48% 52% 42% 58% / 46% 44% 56% 54%;
+      opacity: 0.55;
+      transform: rotate(-14deg);
+      box-shadow: 0 0 28px rgba(255,255,255,0.08);
     }
 
     .thumb-label {
       position: absolute;
       left: 14px;
       top: 14px;
-      z-index: 2;
-      display: inline-flex;
-      align-items: center;
-      min-height: 30px;
-      padding: 0.35rem 0.65rem;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #fff;
-      background: rgba(0,0,0,0.32);
-      border: 1px solid rgba(255,255,255,0.12);
-      backdrop-filter: blur(8px);
-    }
-
-    .shape {
-      position: absolute;
-      border-radius: 999px;
-      opacity: 0.9;
-    }
-
-    .shape.one {
-      width: 130px;
-      height: 130px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.02));
-      right: -14px;
-      top: 28px;
-      transform: rotate(28deg);
-    }
-
-    .shape.two {
-      width: 96px;
-      height: 96px;
-      background: linear-gradient(135deg, rgba(0,0,0,0.12), rgba(255,255,255,0.08));
-      left: 22px;
-      bottom: 26px;
-      transform: rotate(-18deg);
-    }
-
-    .shape.three {
-      width: 180px;
-      height: 2px;
-      left: 18px;
-      bottom: 52px;
-      background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.22), rgba(255,255,255,0));
-    }
-
-    .mini-grid {
-      position: absolute;
-      right: 18px;
-      bottom: 18px;
-      width: 88px;
-      height: 88px;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.18) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.18) 1px, transparent 1px);
-      background-size: 12px 12px;
-      opacity: 0.45;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,0.1));
-    }
-
-    .animal {
-      position: absolute;
-      opacity: 0.12;
-      color: #fff;
-      text-shadow: 0 0 16px rgba(255,255,255,0.12);
-      user-select: none;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .animal.cat {
-      right: 18px;
-      top: 24px;
-      font-size: 4.2rem;
-      transform: rotate(-12deg);
-    }
-
-    .animal.wolf {
-      left: 16px;
-      bottom: 14px;
-      font-size: 4.6rem;
-      transform: rotate(8deg);
-    }
-
-    .animal.bird {
-      right: 24px;
-      bottom: 16px;
-      font-size: 3.4rem;
-      transform: rotate(-8deg);
-    }
-
-    .thumb-text {
-      position: absolute;
-      left: 18px;
-      bottom: 18px;
-      z-index: 2;
-      max-width: 78%;
-    }
-
-    .thumb-kicker {
-      display: inline-block;
-      margin-bottom: 0.35rem;
-      color: rgba(255,255,255,0.9);
-      font-size: 0.76rem;
+      padding: 7px 12px;
+      font-size: 0.75rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
+      letter-spacing: 0.09em;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.22);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(6px);
     }
 
-    .thumb-strong {
-      font-size: 1.18rem;
-      line-height: 1.02;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      text-transform: uppercase;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+    .thumb-wave {
+      position: absolute;
+      left: -10%;
+      right: -10%;
+      bottom: -18%;
+      height: 60%;
+      background:
+        radial-gradient(ellipse at center, rgba(255,255,255,0.16), transparent 58%),
+        linear-gradient(180deg, rgba(255,255,255,0.08), transparent);
+      border-radius: 50%;
+      transform: rotate(-5deg);
+      opacity: 0.8;
     }
 
     .card-body {
-      padding: 1rem 1rem 1.05rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
+      padding: 18px 16px 16px;
     }
 
-    .card-title {
-      font-size: 1.05rem;
-      line-height: 1.2;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    .card-desc {
-      color: var(--muted);
-      font-size: 0.94rem;
-      min-height: 4.2em;
-    }
-
-    .card-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      width: 100%;
-      border-radius: 14px;
-      padding: 0.85rem 1rem;
-      background: linear-gradient(135deg, var(--red), var(--pink));
-      color: #fff;
-      font-weight: 900;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      box-shadow: 0 12px 28px rgba(255, 0, 60, 0.2);
-      transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card-btn:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.05);
-      box-shadow: 0 16px 34px rgba(255, 0, 60, 0.24);
-    }
-
-    .content-block {
-      margin-top: 1.4rem;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 1rem;
-    }
-
-    .panel {
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 22px;
-      padding: 1.2rem;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-
-    .panel h3 {
+    .card-body h3 {
       font-size: 1.15rem;
       font-weight: 900;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.65rem;
+      margin-bottom: 10px;
     }
 
-    .panel p {
+    .card-body p {
       color: var(--muted);
+      line-height: 1.58;
       font-size: 0.95rem;
+      min-height: 48px;
     }
 
-    .bullet-list {
-      display: grid;
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
-
-    .bullet-list li {
+    .card-actions {
+      margin-top: 16px;
       display: flex;
-      gap: 0.7rem;
-      align-items: flex-start;
-      color: var(--muted);
-      font-size: 0.94rem;
     }
 
-    .bullet-list li::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      margin-top: 0.35rem;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--red), var(--pink));
-      box-shadow: 0 0 12px rgba(255, 79, 135, 0.4);
-      flex: 0 0 10px;
-    }
-
-    .info-stack {
-      display: grid;
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
-
-    .info-item {
-      padding: 0.9rem 0.95rem;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .info-item strong {
-      display: block;
-      font-size: 0.95rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .info-item span {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .cta-wrap {
-      padding: 1.4rem 0 2rem;
+    .text-section {
       text-align: center;
     }
 
-    .cta-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 60px;
-      min-width: min(100%, 320px);
-      padding: 1rem 1.6rem;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #ff003c, #ff4f87 55%, #ff2f5c);
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,0.04) inset,
-        0 20px 46px rgba(255, 0, 60, 0.28),
-        0 0 26px rgba(255, 79, 135, 0.26);
-      transition: transform 0.24s ease, box-shadow 0.24s ease, filter 0.24s ease;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-3px) scale(1.01);
-      filter: brightness(1.04);
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,0.05) inset,
-        0 24px 56px rgba(255, 0, 60, 0.34),
-        0 0 32px rgba(255, 79, 135, 0.3);
-    }
-
-    .support {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 0.7rem;
-      flex-wrap: wrap;
-    }
-
-    .support span {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 34px;
-      padding: 0.45rem 0.8rem;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
+    .text-section p {
+      max-width: 770px;
+      margin: 0 auto;
       color: var(--muted);
-      font-size: 0.84rem;
-      font-weight: 700;
+      line-height: 1.78;
+      font-size: 1rem;
+    }
+
+    .feature-list {
+      margin-top: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .feature-row {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 18px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 15px 32px rgba(0,0,0,0.2);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-row::before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      right: -20px;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, rgba(255,79,216,0.18), transparent 68%);
+      pointer-events: none;
+    }
+
+    .feature-row:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,79,216,0.22);
+    }
+
+    .feature-copy h3 {
+      font-size: 1.08rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .feature-copy p {
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    .feature-action {
+      display: flex;
+      align-items: center;
+    }
+
+    .final-cta {
+      text-align: center;
+      padding-top: 28px;
+      padding-bottom: 28px;
+    }
+
+    .final-cta .btn {
+      min-width: min(100%, 320px);
+      min-height: 60px;
+      font-size: 1rem;
+    }
+
+    .mini-points {
+      margin-top: 16px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .mini-points span {
+      color: var(--muted);
+      font-size: 0.93rem;
+      letter-spacing: 0.02em;
     }
 
     footer {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 1.4rem 0 2rem;
-      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0));
+      text-align: center;
+      padding: 20px 14px 40px;
+      color: var(--muted-2);
+      font-size: 0.9rem;
+      line-height: 1.7;
     }
 
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+    @media (min-width: 680px) {
+      .page {
+        padding: 24px 22px 42px;
+      }
 
-    .footer-brand {
-      font-weight: 900;
-      letter-spacing: -0.03em;
-    }
+      .section {
+        margin-top: 26px;
+        padding: 30px 24px;
+      }
 
-    .footer-text {
-      color: #9292a3;
-      font-size: 0.92rem;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      color: #9f9fb2;
-      font-size: 0.92rem;
-    }
-
-    @media (max-width: 920px) {
-      .grid {
+      .cards-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .content-block {
-        grid-template-columns: 1fr;
+      .feature-row {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+      }
+
+      .feature-copy {
+        flex: 1;
+      }
+
+      .feature-action {
+        flex-shrink: 0;
       }
     }
 
-    @media (max-width: 640px) {
-      .hero {
-        padding-top: 2.2rem;
+    @media (min-width: 980px) {
+      .hero-box {
+        padding: 42px 34px;
       }
 
-      .hero-title {
-        font-size: clamp(2.8rem, 16vw, 4.6rem);
+      .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
 
-      .grid {
-        grid-template-columns: 1fr;
+      .section-head p,
+      .hero p,
+      .text-section p {
+        font-size: 1.03rem;
       }
 
-      .section-head {
-        margin-bottom: 1rem;
+      .btn {
+        min-height: 56px;
+        padding: 0 26px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
       }
 
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
+      * {
+        transition: none !important;
+        animation: none !important;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="hero">
-      <div class="container">
-        <div class="hero-box">
-          <div class="eyebrow">Mulheres em destaque • animais em foco</div>
-          <h1 class="hero-title">
-            <span class="line">VEJA</span>
-            <span class="emoji">👀</span>
-            <span class="line">AGORA</span>
-          </h1>
-          <p class="hero-subtitle">
-            Confira os destaques disponíveis abaixo com conteúdos sobre mulheres, histórias inspiradoras, natureza e universo animal.
-          </p>
+  <main class="page">
+    <section class="hero" aria-label="Hero principal">
+      <div class="hero-box">
+        <div class="eyebrow">Em destaque agora</div>
+
+        <div class="hero-title" aria-label="Veja agora">
+          <span class="line">VEJA</span>
+          <span class="eye" aria-hidden="true">👀</span>
+          <span class="line">AGORA</span>
+        </div>
+
+        <p>Confira os destaques disponíveis nesta página.</p>
+        <p>Explore os conteúdos mais acessados e veja o que está chamando atenção agora.</p>
+
+        <div class="cta-wrap">
+          <a href="#em-alta" class="btn">VER DESTAQUES</a>
         </div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section class="section">
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <h2 class="section-title">Seleção principal</h2>
-            </div>
-            <div class="section-note">Conteúdo com foco maior em mulheres e complementos sobre animais</div>
+    <div class="glow-line" aria-hidden="true"></div>
+
+    <section class="section" id="em-alta" aria-labelledby="titulo-em-alta">
+      <div class="section-head">
+        <h2 id="titulo-em-alta">Em alta agora</h2>
+        <p>Selecionamos alguns destaques para você conferir de forma rápida e prática.</p>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card">
+          <div class="thumb">
+            <span class="thumb-label">Destaque visual</span>
+            <div class="thumb-wave" aria-hidden="true"></div>
           </div>
-
-          <div class="grid">
-            <article class="card">
-              <div class="thumb">
-                <span class="thumb-label">Mulheres</span>
-                <div class="thumb-inner">
-                  <div class="shape one"></div>
-                  <div class="shape two"></div>
-                  <div class="shape three"></div>
-                  <div class="mini-grid"></div>
-                  <div class="thumb-text">
-                    <span class="thumb-kicker">Especial</span>
-                    <div class="thumb-strong">Histórias que inspiram</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">Mulheres que transformam ideias em movimento</h3>
-                <p class="card-desc">
-                  Uma seleção com trajetórias marcantes, presença forte e histórias que mostram criatividade, atitude e protagonismo.
-                </p>
-                <a href="#" class="card-btn">Ver agora</a>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="thumb" style="background: radial-gradient(circle at 18% 18%, rgba(255,255,255,0.16), transparent 18%), linear-gradient(135deg, rgba(255,79,135,0.92), rgba(255,0,60,0.88) 45%, rgba(11,11,15,1) 100%);">
-                <span class="thumb-label">Mulheres</span>
-                <div class="thumb-inner">
-                  <div class="shape one" style="width:150px;height:150px;top:18px;right:-18px;"></div>
-                  <div class="shape two" style="left:12px;bottom:18px;width:82px;height:82px;"></div>
-                  <div class="mini-grid"></div>
-                  <div class="thumb-text">
-                    <span class="thumb-kicker">Em alta</span>
-                    <div class="thumb-strong">Estilo e presença</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">Destaques femininos com atitude e identidade</h3>
-                <p class="card-desc">
-                  Conteúdos visuais voltados para perfis femininos em evidência, com foco em imagem forte, elegância e personalidade.
-                </p>
-                <a href="#" class="card-btn">Ver agora</a>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="thumb" style="background: radial-gradient(circle at 22% 20%, rgba(255,255,255,0.18), transparent 18%), linear-gradient(135deg, rgba(255,0,60,0.92), rgba(255,88,128,0.84) 60%, rgba(12,12,16,1) 100%);">
-                <span class="thumb-label">Animais</span>
-                <div class="thumb-inner">
-                  <div class="shape one"></div>
-                  <div class="shape three"></div>
-                  <div class="animal bird">🦅</div>
-                  <div class="thumb-text">
-                    <span class="thumb-kicker">Natureza</span>
-                    <div class="thumb-strong">Olhar selvagem</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">Animais em cenas marcantes da natureza</h3>
-                <p class="card-desc">
-                  Um bloco visual com registros inspirados em comportamento animal, força, agilidade e presença no ambiente natural.
-                </p>
-                <a href="#" class="card-btn">Ver agora</a>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="thumb" style="background: radial-gradient(circle at 22% 14%, rgba(255,255,255,0.14), transparent 16%), linear-gradient(135deg, rgba(18,18,24,1) 0%, rgba(255,0,60,0.95) 42%, rgba(255,79,135,0.86) 100%);">
-                <span class="thumb-label">Mulheres</span>
-                <div class="thumb-inner">
-                  <div class="shape one" style="right:-8px;top:42px;width:120px;height:120px;"></div>
-                  <div class="shape two" style="left:26px;bottom:22px;background:linear-gradient(135deg, rgba(255,255,255,0.08), rgba(0,0,0,0.2));"></div>
-                  <div class="mini-grid"></div>
-                  <div class="thumb-text">
-                    <span class="thumb-kicker">Agora</span>
-                    <div class="thumb-strong">Perfis em foco</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">Mulheres em destaque no visual e na narrativa</h3>
-                <p class="card-desc">
-                  Conteúdos que valorizam expressão, presença de câmera, autenticidade e composições fortes com identidade moderna.
-                </p>
-                <a href="#" class="card-btn">Ver agora</a>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="thumb" style="background: radial-gradient(circle at 28% 18%, rgba(255,255,255,0.16), transparent 18%), linear-gradient(135deg, rgba(255,79,135,0.94), rgba(255,0,60,0.9) 50%, rgba(8,8,12,1) 100%);">
-                <span class="thumb-label">Animais</span>
-                <div class="thumb-inner">
-                  <div class="shape one" style="width:136px;height:136px;"></div>
-                  <div class="shape three"></div>
-                  <div class="animal wolf">🐺</div>
-                  <div class="thumb-text">
-                    <span class="thumb-kicker">Destaque visual</span>
-                    <div class="thumb-strong">Força natural</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">Animais com estética intensa e premium</h3>
-                <p class="card-desc">
-                  Uma seleção de cenas inspiradas em elegância animal, contraste alto e elementos gráficos discretos integrados ao layout.
-                </p>
-                <a href="#" class="card-btn">Ver agora</a>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="thumb" style="background: radial-gradient(circle at 18% 16%, rgba(255,255,255,0.18), transparent 16%), linear-gradient(135deg, rgba(255,0,60,0.95), rgba(255,79,135,0.84) 54%, rgba(15,15,20,1) 100%);">
-                <span class="thumb-label">Mulheres</span>
-                <div class="thumb-inner">
-                  <div class="shape one" style="top:24px;"></div>
-                  <div class="shape two"></div>
-                  <div class="mini-grid"></div>
-                  <div class="animal cat">🐆</div>
-                  <div class="thumb-text">
-                    <span class="thumb-kicker">Curadoria</span>
-                    <div class="thumb-strong">Presença feminina</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">Conteúdo principal com foco em mulheres</h3>
-                <p class="card-desc">
-                  Bloco central pensado para destacar mulheres em diferentes contextos visuais, com energia, elegância e impacto.
-                </p>
-                <a href="#" class="card-btn">Ver agora</a>
-              </div>
-            </article>
-          </div>
-
-          <div class="content-block">
-            <div class="panel">
-              <h3>O que o visitante encontra aqui</h3>
-              <p>
-                Esta página foi estruturada para destacar principalmente conteúdos sobre mulheres, sem deixar de incluir temas ligados ao universo animal como apoio visual e editorial.
-              </p>
-              <ul class="bullet-list">
-                <li>Destaques femininos com protagonismo, atitude e presença visual forte.</li>
-                <li>Conteúdos complementares sobre animais, natureza e comportamento visual marcante.</li>
-                <li>Experiência coerente com estética intensa, contraste alto e navegação simples.</li>
-                <li>Layout responsivo com impacto visual no mobile e organização clara dos destaques.</li>
-              </ul>
-            </div>
-
-            <div class="panel">
-              <h3>Resumo dos destaques</h3>
-              <div class="info-stack">
-                <div class="info-item">
-                  <strong>Foco principal</strong>
-                  <span>Conteúdo visual sobre mulheres, perfis em destaque e histórias inspiradoras.</span>
-                </div>
-                <div class="info-item">
-                  <strong>Conteúdo complementar</strong>
-                  <span>Elementos e blocos com temas sobre animais, natureza e presença selvagem.</span>
-                </div>
-                <div class="info-item">
-                  <strong>Atualização contínua</strong>
-                  <span>Estrutura pronta para receber novos destaques de forma rápida e organizada.</span>
-                </div>
-              </div>
+          <div class="card-body">
+            <h3>Destaque 01</h3>
+            <p>Conteúdo em evidência com alto interesse do público.</p>
+            <div class="card-actions">
+              <a href="#final" class="btn alt">Ver agora</a>
             </div>
           </div>
+        </article>
 
-          <div class="cta-wrap">
-            <a href="#" class="cta-button">Acessar agora</a>
-            <div class="support">
-              <span>Conteúdos sobre mulheres</span>
-              <span>Destaques com animais</span>
-              <span>Atualizações frequentes</span>
+        <article class="card">
+          <div class="thumb" style="background:
+            radial-gradient(circle at 22% 18%, rgba(255,255,255,0.15), transparent 15%),
+            radial-gradient(circle at 78% 28%, rgba(255,255,255,0.1), transparent 16%),
+            linear-gradient(135deg, rgba(255,79,216,0.95), rgba(126,25,255,0.88) 50%, rgba(255,35,79,0.92));">
+            <span class="thumb-label">Visual em alta</span>
+            <div class="thumb-wave" aria-hidden="true"></div>
+          </div>
+          <div class="card-body">
+            <h3>Destaque 02</h3>
+            <p>Um dos conteúdos mais visualizados neste momento.</p>
+            <div class="card-actions">
+              <a href="#final" class="btn alt">Ver agora</a>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </article>
+
+        <article class="card">
+          <div class="thumb" style="background:
+            radial-gradient(circle at 18% 20%, rgba(255,255,255,0.14), transparent 15%),
+            radial-gradient(circle at 80% 32%, rgba(255,255,255,0.11), transparent 16%),
+            linear-gradient(135deg, rgba(255,35,79,0.96), rgba(255,122,168,0.9) 48%, rgba(255,79,216,0.9));">
+            <span class="thumb-label">Atualizado</span>
+            <div class="thumb-wave" aria-hidden="true"></div>
+          </div>
+          <div class="card-body">
+            <h3>Destaque 03</h3>
+            <p>Seleção atualizada com temas que chamam atenção.</p>
+            <div class="card-actions">
+              <a href="#final" class="btn alt">Ver agora</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb" style="background:
+            radial-gradient(circle at 20% 20%, rgba(255,255,255,0.14), transparent 15%),
+            radial-gradient(circle at 82% 25%, rgba(255,255,255,0.11), transparent 16%),
+            linear-gradient(135deg, rgba(126,25,255,0.88), rgba(255,79,216,0.9) 50%, rgba(255,35,79,0.92));">
+            <span class="thumb-label">Acesso rápido</span>
+            <div class="thumb-wave" aria-hidden="true"></div>
+          </div>
+          <div class="card-body">
+            <h3>Destaque 04</h3>
+            <p>Acesso rápido a um dos conteúdos mais procurados.</p>
+            <div class="card-actions">
+              <a href="#final" class="btn alt">Ver agora</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb" style="background:
+            radial-gradient(circle at 17% 18%, rgba(255,255,255,0.15), transparent 15%),
+            radial-gradient(circle at 81% 31%, rgba(255,255,255,0.1), transparent 16%),
+            linear-gradient(135deg, rgba(255,35,79,0.95), rgba(255,79,216,0.88) 56%, rgba(255,160,200,0.82));">
+            <span class="thumb-label">Popular</span>
+            <div class="thumb-wave" aria-hidden="true"></div>
+          </div>
+          <div class="card-body">
+            <h3>Destaque 05</h3>
+            <p>Mais um conteúdo popular disponível na página.</p>
+            <div class="card-actions">
+              <a href="#final" class="btn alt">Ver agora</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb" style="background:
+            radial-gradient(circle at 20% 20%, rgba(255,255,255,0.14), transparent 15%),
+            radial-gradient(circle at 80% 28%, rgba(255,255,255,0.1), transparent 16%),
+            linear-gradient(135deg, rgba(255,79,216,0.94), rgba(255,35,79,0.9) 45%, rgba(126,25,255,0.86));">
+            <span class="thumb-label">Recente</span>
+            <div class="thumb-wave" aria-hidden="true"></div>
+          </div>
+          <div class="card-body">
+            <h3>Destaque 06</h3>
+            <p>Confira outro item em destaque atualizado recentemente.</p>
+            <div class="card-actions">
+              <a href="#final" class="btn alt">Ver agora</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section text-section" aria-labelledby="titulo-explicacao">
+      <div class="section-head">
+        <h2 id="titulo-explicacao">O que você encontra aqui</h2>
+      </div>
+      <p>
+        Esta página reúne conteúdos em destaque organizados de forma simples e visual.
+        O objetivo é facilitar a visualização dos itens mais procurados do momento em um só lugar.
+        Tudo foi disposto para oferecer uma navegação rápida, clara e direta.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="titulo-mais-destaques">
+      <div class="section-head">
+        <h2 id="titulo-mais-destaques">Mais destaques para explorar</h2>
+        <p>Continue navegando e confira outros conteúdos disponíveis.</p>
+      </div>
+
+      <div class="feature-list">
+        <article class="feature-row">
+          <div class="feature-copy">
+            <h3>Conteúdo em destaque</h3>
+            <p>Atualizado com frequência para manter a página sempre dinâmica.</p>
+          </div>
+          <div class="feature-action">
+            <a href="#final" class="btn alt">Acessar</a>
+          </div>
+        </article>
+
+        <article class="feature-row">
+          <div class="feature-copy">
+            <h3>Seleção do momento</h3>
+            <p>Itens apresentados de forma visual para facilitar a navegação.</p>
+          </div>
+          <div class="feature-action">
+            <a href="#final" class="btn alt">Acessar</a>
+          </div>
+        </article>
+
+        <article class="feature-row">
+          <div class="feature-copy">
+            <h3>Mais visualizados</h3>
+            <p>Uma área pensada para mostrar rapidamente o que mais chama atenção.</p>
+          </div>
+          <div class="feature-action">
+            <a href="#final" class="btn alt">Acessar</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section final-cta" id="final" aria-labelledby="titulo-cta-final">
+      <div class="section-head">
+        <h2 id="titulo-cta-final">Pronto para explorar?</h2>
+      </div>
+
+      <a href="#topo" class="btn">ACESSAR AGORA</a>
+
+      <div class="mini-points">
+        <span>Conteúdos em destaque</span>
+        <span>Atualizações frequentes</span>
+        <span>Navegação rápida e visual</span>
+      </div>
+    </section>
 
     <footer>
-      <div class="container">
-        <div class="footer-inner">
-          <div class="footer-brand">Veja Agora</div>
-          <div class="footer-text">Página visual com destaques organizados sobre mulheres e animais.</div>
-          <div class="footer-links">
-            <a href="#">Privacidade</a>
-            <a href="#">Termos</a>
-            <a href="#">Contato</a>
-          </div>
-        </div>
-      </div>
+      <p>Página de conteúdo online</p>
+      <p>Atualizada regularmente</p>
     </footer>
-  </div>
+  </main>
 </body>
 </html>
