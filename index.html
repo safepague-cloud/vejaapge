@@ -3,34 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veja Agora | Destaques e Notícias</title>
+  <title>VEJA AGORA | Tendências da internet</title>
   <meta
     name="description"
-    content="Confira notícias, tendências e destaques organizados de forma visual, rápida e chamativa."
+    content="Portal de conteúdo digital com tendências da internet, conteúdos virais e curiosidades que estão chamando atenção agora."
   />
   <style>
     :root {
-      --bg: #050507;
-      --bg-soft: #0d0d14;
-      --card: rgba(255, 255, 255, 0.05);
-      --card-strong: rgba(255, 255, 255, 0.08);
-      --white: #ffffff;
-      --muted: #d7d7df;
-      --muted-2: #9b9bab;
-      --red: #ff234f;
-      --pink: #ff4fd8;
-      --rose: #ff7aa8;
-      --purple: #7e19ff;
-      --shadow: 0 18px 45px rgba(255, 35, 79, 0.22);
-      --shadow-soft: 0 10px 30px rgba(255, 79, 216, 0.12);
+      --bg: #07070b;
+      --bg-soft: #101019;
+      --panel: rgba(255, 255, 255, 0.04);
+      --panel-strong: rgba(255, 255, 255, 0.07);
+      --border: rgba(255, 255, 255, 0.1);
+      --text: #ffffff;
+      --muted: #c9c9d6;
+      --muted-2: #9d9db0;
+      --red: #ff2b4d;
+      --pink: #ff4fb8;
+      --purple: #8d4dff;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
       --radius: 22px;
+      --radius-sm: 16px;
       --max: 1180px;
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     html {
@@ -38,964 +36,1007 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at 15% 20%, rgba(255, 79, 216, 0.18), transparent 22%),
-        radial-gradient(circle at 85% 12%, rgba(255, 35, 79, 0.16), transparent 24%),
-        radial-gradient(circle at 50% 80%, rgba(255, 122, 168, 0.14), transparent 28%),
-        linear-gradient(180deg, #020203 0%, #07070a 38%, #090913 100%);
-      color: var(--white);
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
+        radial-gradient(circle at top left, rgba(255, 43, 77, 0.2), transparent 30%),
+        radial-gradient(circle at top right, rgba(255, 79, 184, 0.15), transparent 28%),
+        radial-gradient(circle at bottom center, rgba(141, 77, 255, 0.14), transparent 30%),
+        linear-gradient(180deg, #050509 0%, #090910 40%, #06060b 100%);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    body::before,
-    body::after {
-      content: "";
-      position: fixed;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.22;
-    }
-
-    body::before {
-      top: 7%;
-      left: -34px;
-      width: 170px;
-      height: 240px;
-      background:
-        radial-gradient(circle at 30% 25%, rgba(255,255,255,0.05) 0 12%, transparent 13%),
-        radial-gradient(circle at 70% 24%, rgba(255,255,255,0.05) 0 12%, transparent 13%),
-        radial-gradient(circle at 50% 48%, rgba(255,255,255,0.04) 0 11%, transparent 12%),
-        linear-gradient(145deg, rgba(255,79,216,0.22), rgba(255,35,79,0.02));
-      border-radius: 54% 46% 60% 40% / 50% 50% 50% 50%;
-      transform: rotate(-18deg);
-      box-shadow: 0 0 60px rgba(255, 79, 216, 0.15);
-    }
-
-    body::after {
-      right: -28px;
-      bottom: 16%;
-      width: 180px;
-      height: 250px;
-      background:
-        radial-gradient(circle at 34% 26%, rgba(255,255,255,0.05) 0 12%, transparent 13%),
-        radial-gradient(circle at 70% 25%, rgba(255,255,255,0.05) 0 12%, transparent 13%),
-        radial-gradient(circle at 52% 50%, rgba(255,255,255,0.04) 0 12%, transparent 13%),
-        linear-gradient(145deg, rgba(255,35,79,0.22), rgba(255,79,216,0.03));
-      border-radius: 42% 58% 45% 55% / 44% 48% 52% 56%;
-      transform: rotate(15deg);
-      box-shadow: 0 0 60px rgba(255, 35, 79, 0.16);
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
-    .page {
-      position: relative;
-      z-index: 1;
-      width: min(100%, var(--max));
+    .container {
+      width: min(100% - 32px, var(--max));
       margin: 0 auto;
-      padding: 18px 16px 40px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(7, 7, 11, 0.92), rgba(7, 7, 11, 0.68));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .header-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 74px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.96rem;
+    }
+
+    .brand-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.45), transparent 30%),
+        linear-gradient(135deg, var(--red), var(--pink) 55%, var(--purple));
+      box-shadow:
+        0 10px 30px rgba(255, 43, 77, 0.25),
+        inset 0 1px 1px rgba(255,255,255,0.35);
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+      transform: translateY(-1px);
     }
 
     .hero {
-      min-height: 88vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px 0 18px;
-    }
-
-    .hero-box {
-      width: 100%;
-      max-width: 860px;
-      padding: 30px 18px;
-      border-radius: 32px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)),
-        radial-gradient(circle at top, rgba(255,79,216,0.14), transparent 30%);
-      border: 1px solid rgba(255,255,255,0.09);
-      box-shadow:
-        0 25px 80px rgba(0,0,0,0.55),
-        0 0 0 1px rgba(255,255,255,0.02) inset;
       position: relative;
+      padding: 72px 0 40px;
       overflow: hidden;
     }
 
-    .hero-box::before {
+    .hero::before {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.03) 35%, transparent 60%),
-        radial-gradient(circle at 50% 0%, rgba(255,35,79,0.12), transparent 42%);
+        radial-gradient(circle at 10% 10%, rgba(255, 43, 77, 0.22), transparent 25%),
+        radial-gradient(circle at 80% 0%, rgba(255, 79, 184, 0.16), transparent 28%),
+        radial-gradient(circle at 50% 100%, rgba(141, 77, 255, 0.13), transparent 30%);
       pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 30px;
+      align-items: center;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       padding: 8px 14px;
-      margin-bottom: 18px;
       border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--white);
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 0 25px rgba(255, 79, 216, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: #ffd1de;
+      font-size: 0.88rem;
+      margin-bottom: 18px;
     }
 
-    .hero-title {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.9rem, 8vw, 5.8rem);
       line-height: 0.95;
+      letter-spacing: -0.05em;
       font-weight: 900;
       text-transform: uppercase;
-      margin-bottom: 18px;
-      letter-spacing: 0.02em;
     }
 
-    .hero-title .line {
-      font-size: clamp(3rem, 12vw, 6.5rem);
-      text-shadow:
-        0 0 22px rgba(255,255,255,0.16),
-        0 0 38px rgba(255,79,216,0.2),
-        0 0 56px rgba(255,35,79,0.16);
+    .hero h1 .accent {
+      display: block;
+      background: linear-gradient(90deg, #ffffff 0%, #ff8bc9 35%, #ff4365 68%, #ffffff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 18px rgba(255, 79, 184, 0.15);
     }
 
-    .hero-title .eye {
-      font-size: clamp(2.4rem, 9vw, 4.8rem);
-      filter: drop-shadow(0 0 16px rgba(255, 79, 216, 0.5));
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      color: #ffe8f4;
+      margin: 0 0 16px;
+      max-width: 62ch;
     }
 
     .hero p {
-      max-width: 680px;
-      margin: 0 auto;
-      font-size: 1rem;
-      line-height: 1.65;
       color: var(--muted);
-    }
-
-    .hero p + p {
-      margin-top: 2px;
-    }
-
-    .cta-wrap {
-      margin-top: 24px;
-      display: flex;
-      justify-content: center;
+      margin: 0 0 28px;
+      max-width: 62ch;
+      font-size: 1rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 56px;
-      padding: 0 24px;
-      border: none;
+      gap: 10px;
+      padding: 15px 24px;
       border-radius: 999px;
+      font-weight: 700;
       background: linear-gradient(135deg, var(--red), var(--pink));
-      color: var(--white);
-      font-size: 0.98rem;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      color: #fff;
       box-shadow:
-        0 16px 40px rgba(255, 35, 79, 0.28),
-        0 0 30px rgba(255, 79, 216, 0.18);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
+        0 14px 36px rgba(255, 43, 77, 0.28),
+        inset 0 1px 0 rgba(255,255,255,0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .btn::before {
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 18px 42px rgba(255, 43, 77, 0.34),
+        inset 0 1px 0 rgba(255,255,255,0.25);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 430px;
+      border-radius: 30px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.16), transparent 20%),
+        radial-gradient(circle at 80% 25%, rgba(255, 79, 184, 0.26), transparent 18%),
+        radial-gradient(circle at 60% 75%, rgba(255, 43, 77, 0.22), transparent 20%),
+        linear-gradient(135deg, #1a0d18 0%, #120d24 42%, #2a0d16 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .hero-visual::before,
+    .hero-visual::after {
       content: "";
       position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.18) 50%, transparent 80%);
-      transform: translateX(-120%);
-      transition: transform 0.5s ease;
+      border-radius: 50%;
+      filter: blur(18px);
+      opacity: 0.8;
     }
 
-    .btn:hover,
-    .btn:focus-visible {
-      transform: translateY(-2px) scale(1.01);
-      box-shadow:
-        0 20px 48px rgba(255, 35, 79, 0.34),
-        0 0 38px rgba(255, 79, 216, 0.22);
-      filter: saturate(1.08);
-      outline: none;
+    .hero-visual::before {
+      width: 180px;
+      height: 180px;
+      top: 22px;
+      right: 30px;
+      background: radial-gradient(circle, rgba(255,79,184,0.95), rgba(255,79,184,0));
     }
 
-    .btn:hover::before,
-    .btn:focus-visible::before {
-      transform: translateX(120%);
+    .hero-visual::after {
+      width: 240px;
+      height: 240px;
+      bottom: 14px;
+      left: 10px;
+      background: radial-gradient(circle, rgba(255,43,77,0.75), rgba(255,43,77,0));
     }
 
-    .btn.alt {
-      background: rgba(255,255,255,0.06);
+    .shape {
+      position: absolute;
       border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.28);
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+      backdrop-filter: blur(6px);
+    }
+
+    .shape.s1 {
+      width: 120px;
+      height: 120px;
+      top: 44px;
+      left: 42px;
+      border-radius: 28px;
+      transform: rotate(16deg);
+    }
+
+    .shape.s2 {
+      width: 180px;
+      height: 180px;
+      bottom: 54px;
+      right: 42px;
+      border-radius: 36px;
+      transform: rotate(-18deg);
+    }
+
+    .shape.s3 {
+      width: 320px;
+      height: 12px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-15deg);
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(255,79,184,0.2), rgba(255,255,255,0.5), rgba(255,43,77,0.2));
+      box-shadow: 0 0 30px rgba(255, 79, 184, 0.25);
+    }
+
+    .shape.s4 {
+      width: 90px;
+      height: 90px;
+      bottom: 64px;
+      left: 80px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 35%, rgba(255,255,255,0.6), transparent 20%),
+        linear-gradient(135deg, rgba(255,79,184,0.32), rgba(141,77,255,0.15));
+    }
+
+    .shape.s5 {
+      width: 160px;
+      height: 160px;
+      top: 150px;
+      left: 170px;
+      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+      background: linear-gradient(135deg, rgba(255,43,77,0.22), rgba(255,79,184,0.08));
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transform: rotate(10deg);
     }
 
     .section {
-      margin-top: 22px;
-      padding: 24px 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 28px;
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(10px);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .section::before {
-      content: "";
-      position: absolute;
-      top: -60px;
-      right: -60px;
-      width: 140px;
-      height: 140px;
-      background: radial-gradient(circle, rgba(255,79,216,0.18), transparent 65%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .section::after {
-      content: "";
-      position: absolute;
-      bottom: -70px;
-      left: -60px;
-      width: 160px;
-      height: 160px;
-      background: radial-gradient(circle, rgba(255,35,79,0.14), transparent 65%);
-      border-radius: 50%;
-      pointer-events: none;
+      padding: 42px 0;
     }
 
     .section-head {
-      text-align: center;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
       margin-bottom: 22px;
-      position: relative;
-      z-index: 1;
     }
 
-    .section-head h2 {
-      font-size: clamp(1.65rem, 5vw, 2.5rem);
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      margin-bottom: 10px;
-      text-shadow: 0 0 18px rgba(255, 79, 216, 0.15);
+    .section-kicker {
+      display: inline-block;
+      color: #ffb3ca;
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+      font-weight: 700;
     }
 
-    .section-head p {
-      max-width: 700px;
-      margin: 0 auto;
+    .section h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .section p.lead {
+      margin: 0;
       color: var(--muted);
-      line-height: 1.65;
-      font-size: 0.98rem;
+      max-width: 70ch;
     }
 
     .cards-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      position: relative;
-      z-index: 1;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 28px;
     }
 
     .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.035));
-      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.03));
+      border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 18px 34px rgba(0,0,0,0.24);
-      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
-      display: flex;
-      flex-direction: column;
+      box-shadow: var(--shadow);
+      transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
     }
 
     .card:hover {
       transform: translateY(-4px);
-      border-color: rgba(255,79,216,0.28);
-      box-shadow:
-        0 24px 42px rgba(0,0,0,0.3),
-        0 0 28px rgba(255, 79, 216, 0.08);
+      border-color: rgba(255, 79, 184, 0.35);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.035));
     }
 
     .thumb {
-      height: 175px;
       position: relative;
-      background:
-        radial-gradient(circle at 18% 20%, rgba(255,255,255,0.16), transparent 15%),
-        radial-gradient(circle at 80% 30%, rgba(255,255,255,0.12), transparent 16%),
-        linear-gradient(135deg, rgba(255,35,79,0.92), rgba(255,79,216,0.9) 52%, rgba(126,25,255,0.86));
+      aspect-ratio: 16 / 10;
       overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(255, 43, 77, 0.85), rgba(255, 79, 184, 0.72) 48%, rgba(141, 77, 255, 0.82));
+      isolation: isolate;
+    }
+
+    .thumb::before,
+    .thumb::after {
+      content: "";
+      position: absolute;
+      inset: auto;
+      filter: blur(8px);
+      opacity: 0.8;
     }
 
     .thumb::before {
+      width: 120px;
+      height: 120px;
+      top: 14px;
+      right: 16px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.65), rgba(255,255,255,0));
+    }
+
+    .thumb::after {
+      width: 180px;
+      height: 180px;
+      bottom: -20px;
+      left: -10px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 43, 77, 0.75), rgba(255, 43, 77, 0));
+    }
+
+    .thumb .g {
+      position: absolute;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.03));
+      backdrop-filter: blur(3px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+
+    .thumb.t1 .g1 { width: 84px; height: 84px; left: 18px; top: 20px; border-radius: 18px; transform: rotate(12deg); }
+    .thumb.t1 .g2 { width: 170px; height: 10px; right: 20px; bottom: 34px; border-radius: 999px; transform: rotate(-20deg); }
+    .thumb.t1 .g3 { width: 70px; height: 70px; right: 36px; top: 58px; border-radius: 50%; }
+
+    .thumb.t2 .g1 { width: 90px; height: 90px; right: 22px; top: 16px; border-radius: 50%; }
+    .thumb.t2 .g2 { width: 145px; height: 145px; left: 18px; bottom: 12px; border-radius: 26px; transform: rotate(-16deg); }
+    .thumb.t2 .g3 { width: 120px; height: 10px; left: 110px; top: 42px; border-radius: 999px; transform: rotate(18deg); }
+
+    .thumb.t3 .g1 { width: 0; height: 0; left: 26px; top: 24px; border-left: 55px solid transparent; border-right: 55px solid transparent; border-bottom: 92px solid rgba(255,255,255,0.18); background: transparent; border-top: 0; }
+    .thumb.t3 .g2 { width: 150px; height: 150px; right: 20px; bottom: 16px; border-radius: 28px; transform: rotate(18deg); }
+    .thumb.t3 .g3 { width: 92px; height: 92px; right: 42px; top: 18px; border-radius: 18px; }
+
+    .thumb.t4 .g1 { width: 190px; height: 10px; left: 20px; top: 34px; border-radius: 999px; transform: rotate(-16deg); }
+    .thumb.t4 .g2 { width: 116px; height: 116px; right: 24px; top: 40px; border-radius: 24px; transform: rotate(10deg); }
+    .thumb.t4 .g3 { width: 70px; height: 70px; left: 34px; bottom: 20px; border-radius: 50%; }
+
+    .thumb.t5 .g1 { width: 150px; height: 150px; left: 26px; top: 16px; border-radius: 30px; transform: rotate(20deg); }
+    .thumb.t5 .g2 { width: 80px; height: 80px; right: 28px; bottom: 20px; border-radius: 50%; }
+    .thumb.t5 .g3 { width: 130px; height: 10px; right: 46px; top: 34px; border-radius: 999px; transform: rotate(-26deg); }
+
+    .thumb.t6 .g1 { width: 96px; height: 96px; left: 24px; bottom: 24px; border-radius: 22px; }
+    .thumb.t6 .g2 { width: 170px; height: 170px; right: 16px; top: 10px; border-radius: 50%; }
+    .thumb.t6 .g3 { width: 130px; height: 10px; left: 100px; bottom: 34px; border-radius: 999px; transform: rotate(22deg); }
+
+    .card-body {
+      padding: 20px 20px 22px;
+    }
+
+    .card-title {
+      margin: 0 0 8px;
+      font-size: 1.12rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .card-text {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .article-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 8px;
+    }
+
+    .article-card,
+    .side-panel,
+    .explore-card,
+    .cta-panel {
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.025));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .article-card {
+      padding: 28px;
+    }
+
+    .article-card h3 {
+      margin: 0 0 18px;
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .article-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .points {
+      margin: 18px 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .points li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .points span.num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: inline-grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--red), var(--pink));
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 800;
+      flex: 0 0 auto;
+      box-shadow: 0 10px 20px rgba(255, 43, 77, 0.25);
+    }
+
+    .side-panel {
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .side-panel::before {
+      content: "";
+      position: absolute;
+      inset: auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      top: -40px;
+      right: -40px;
+      background: radial-gradient(circle, rgba(255,79,184,0.22), rgba(255,79,184,0));
+      filter: blur(10px);
+    }
+
+    .side-panel h4 {
+      position: relative;
+      margin: 0 0 16px;
+      font-size: 1.1rem;
+      color: #ffe3ef;
+      z-index: 1;
+    }
+
+    .stat-list {
+      position: relative;
+      display: grid;
+      gap: 14px;
+      z-index: 1;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.8rem;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .stat p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .explore-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .explore-card {
+      padding: 22px;
+      transition: transform 0.22s ease, border-color 0.22s ease;
+    }
+
+    .explore-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 79, 184, 0.28);
+    }
+
+    .explore-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      margin-bottom: 16px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.42), transparent 25%),
+        linear-gradient(135deg, var(--red), var(--pink), var(--purple));
+      box-shadow: 0 12px 30px rgba(255, 43, 77, 0.2);
+    }
+
+    .explore-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .explore-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .cta {
+      padding: 26px 0 56px;
+    }
+
+    .cta-panel {
+      text-align: center;
+      padding: 34px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-panel::before {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(130deg, transparent 0 30%, rgba(255,255,255,0.14) 31% 34%, transparent 35% 100%),
-        radial-gradient(circle at 68% 66%, rgba(0,0,0,0.35), transparent 34%);
-      mix-blend-mode: screen;
+        radial-gradient(circle at 20% 20%, rgba(255,43,77,0.16), transparent 24%),
+        radial-gradient(circle at 80% 20%, rgba(255,79,184,0.14), transparent 22%),
+        radial-gradient(circle at 50% 100%, rgba(141,77,255,0.12), transparent 26%);
+      pointer-events: none;
     }
 
-    .thumb::after {
-      content: "";
-      position: absolute;
-      width: 130px;
-      height: 130px;
-      right: -16px;
-      bottom: -18px;
-      background:
-        radial-gradient(circle at 30% 24%, rgba(255,255,255,0.22) 0 10%, transparent 11%),
-        radial-gradient(circle at 68% 24%, rgba(255,255,255,0.22) 0 10%, transparent 11%),
-        radial-gradient(circle at 50% 52%, rgba(255,255,255,0.15) 0 12%, transparent 13%),
-        linear-gradient(145deg, rgba(0,0,0,0.18), rgba(255,255,255,0.02));
-      border-radius: 48% 52% 42% 58% / 46% 44% 56% 54%;
-      opacity: 0.55;
-      transform: rotate(-14deg);
-      box-shadow: 0 0 28px rgba(255,255,255,0.08);
-    }
-
-    .thumb-label {
-      position: absolute;
-      left: 14px;
-      top: 14px;
-      padding: 7px 12px;
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      border-radius: 999px;
-      background: rgba(0,0,0,0.22);
-      border: 1px solid rgba(255,255,255,0.16);
-      backdrop-filter: blur(6px);
-    }
-
-    .thumb-title {
-      position: absolute;
-      left: 16px;
-      right: 16px;
-      bottom: 16px;
-      font-size: 1rem;
-      font-weight: 900;
-      line-height: 1.2;
-      text-shadow: 0 8px 18px rgba(0,0,0,0.45);
-    }
-
-    .card-body {
-      padding: 18px 16px 16px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .category {
-      display: inline-block;
-      align-self: flex-start;
-      margin-bottom: 10px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #fff;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .card-body h3 {
-      font-size: 1.1rem;
-      font-weight: 900;
-      margin-bottom: 10px;
-      line-height: 1.35;
-    }
-
-    .card-body p {
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 0.95rem;
-    }
-
-    .card-actions {
-      margin-top: 16px;
-      display: flex;
-    }
-
-    .info-block {
-      text-align: center;
-    }
-
-    .info-block p {
-      max-width: 770px;
-      margin: 0 auto;
-      color: var(--muted);
-      line-height: 1.78;
-      font-size: 1rem;
-    }
-
-    .list-highlights {
-      margin-top: 20px;
-      display: grid;
-      gap: 12px;
-      text-align: left;
+    .cta-panel > * {
       position: relative;
       z-index: 1;
     }
 
-    .list-item {
-      padding: 16px 16px 16px 18px;
-      border-radius: 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
+    .cta-panel .btn {
+      margin-top: 6px;
     }
 
-    .list-item .dot {
-      width: 10px;
-      height: 10px;
-      min-width: 10px;
-      border-radius: 50%;
-      margin-top: 7px;
-      background: linear-gradient(135deg, var(--red), var(--pink));
-      box-shadow: 0 0 16px rgba(255, 79, 216, 0.45);
-    }
-
-    .list-item strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 0.98rem;
-    }
-
-    .list-item span {
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 0.93rem;
-    }
-
-    .feature-list {
+    .cta-notes {
       margin-top: 18px;
-      display: grid;
-      gap: 14px;
+      color: var(--muted-2);
+      font-size: 0.92rem;
     }
 
-    .feature-row {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      padding: 18px;
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 15px 32px rgba(0,0,0,0.2);
-      transition: transform 0.25s ease, border-color 0.25s ease;
+    .cta-notes span {
+      display: inline-block;
+      margin: 0 10px;
       position: relative;
-      overflow: hidden;
     }
 
-    .feature-row::before {
-      content: "";
+    .cta-notes span::before {
+      content: "•";
+      color: #ff6ba8;
       position: absolute;
-      top: -30px;
-      right: -20px;
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(circle, rgba(255,79,216,0.18), transparent 68%);
-      pointer-events: none;
+      left: -12px;
     }
 
-    .feature-row:hover {
-      transform: translateY(-3px);
-      border-color: rgba(255,79,216,0.22);
+    .cta-notes span:first-child::before {
+      display: none;
     }
 
-    .feature-copy h3 {
-      font-size: 1.08rem;
-      font-weight: 900;
-      margin-bottom: 8px;
+    .footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.02);
     }
 
-    .feature-copy p {
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 0.95rem;
-    }
-
-    .feature-action {
+    .footer-wrap {
+      min-height: 86px;
       display: flex;
       align-items: center;
-    }
-
-    .final-cta {
+      justify-content: center;
       text-align: center;
-      padding-top: 28px;
-      padding-bottom: 28px;
-    }
-
-    .final-cta .btn {
-      min-width: min(100%, 320px);
-      min-height: 60px;
-      font-size: 1rem;
-    }
-
-    .mini-points {
-      margin-top: 16px;
-      display: grid;
-      gap: 8px;
-    }
-
-    .mini-points span {
       color: var(--muted);
-      font-size: 0.93rem;
-      letter-spacing: 0.02em;
+      font-size: 0.95rem;
+      padding: 18px 0;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px 14px 40px;
-      color: var(--muted-2);
-      font-size: 0.9rem;
-      line-height: 1.7;
+    .footer-wrap p {
+      margin: 0;
     }
 
-    @media (min-width: 680px) {
-      .page {
-        padding: 24px 22px 42px;
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .article-wrap {
+        grid-template-columns: 1fr;
       }
 
-      .section {
-        margin-top: 26px;
-        padding: 30px 24px;
+      .hero-visual {
+        min-height: 360px;
       }
 
       .cards-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .feature-row {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 22px;
-      }
-
-      .feature-copy {
-        flex: 1;
-      }
-
-      .feature-action {
-        flex-shrink: 0;
+      .explore-grid {
+        grid-template-columns: 1fr;
       }
     }
 
-    @media (min-width: 980px) {
-      .hero-box {
-        padding: 42px 34px;
+    @media (max-width: 720px) {
+      .header-wrap {
+        min-height: 66px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.7rem, 14vw, 4rem);
+      }
+
+      .hero-subtitle {
+        font-size: 1.05rem;
       }
 
       .cards-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr;
       }
 
-      .section-head p,
-      .hero p,
-      .info-block p {
-        font-size: 1.03rem;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
+      .section-head {
+        align-items: start;
       }
 
-      * {
-        transition: none !important;
-        animation: none !important;
+      .article-card,
+      .side-panel,
+      .explore-card,
+      .cta-panel {
+        border-radius: 22px;
+      }
+
+      .article-card {
+        padding: 22px;
+      }
+
+      .side-panel {
+        padding: 20px;
+      }
+
+      .cta-panel {
+        padding: 28px 18px;
+      }
+
+      .cta-notes span {
+        display: block;
+        margin: 6px 0;
+      }
+
+      .cta-notes span::before {
+        display: none;
       }
     }
   </style>
 </head>
 <body>
-  <main class="page">
-    <section class="hero" aria-label="Hero principal">
-      <div class="hero-box">
-        <div class="eyebrow">Destaques, notícias e tendências</div>
+  <header class="site-header">
+    <div class="container header-wrap">
+      <a href="#topo" class="brand" aria-label="Página inicial VEJA AGORA">
+        <span class="brand-badge">👀</span>
+        <span>VEJA AGORA</span>
+      </a>
 
-        <div class="hero-title" aria-label="Veja agora">
-          <span class="line">VEJA</span>
-          <span class="eye" aria-hidden="true">👀</span>
-          <span class="line">AGORA</span>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#alta">Em alta</a>
+        <a href="#artigo">Artigo</a>
+        <a href="#explorar">Explorar mais</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Portal digital em destaque</div>
+          <h1>
+            VEJA
+            <span class="accent">👀 AGORA</span>
+          </h1>
+          <p class="hero-subtitle">
+            Tendências da internet, conteúdos virais e curiosidades que estão chamando atenção agora.
+          </p>
+          <p>
+            Nesta página reunimos conteúdos que estão circulando nas redes sociais e despertando curiosidade entre usuários da internet.
+            Explore os destaques e veja o que está em evidência no momento.
+          </p>
+          <a class="btn" href="#alta">Explorar conteúdos</a>
         </div>
 
-        <p>Confira os destaques disponíveis nesta página.</p>
-        <p>Explore os conteúdos mais acessados e veja o que está chamando atenção agora.</p>
-
-        <div class="cta-wrap">
-          <a href="#em-alta" class="btn">VER DESTAQUES</a>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="shape s1"></div>
+          <div class="shape s2"></div>
+          <div class="shape s3"></div>
+          <div class="shape s4"></div>
+          <div class="shape s5"></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="em-alta" aria-labelledby="titulo-em-alta">
-      <div class="section-head">
-        <h2 id="titulo-em-alta">Em alta agora</h2>
-        <p>Selecionamos alguns destaques para você conferir de forma rápida e prática.</p>
-      </div>
-
-      <div class="cards-grid">
-        <article class="card">
-          <div class="thumb">
-            <span class="thumb-label">Tecnologia</span>
-            <div class="thumb-title">IA no dia a dia ganha espaço entre estudo, trabalho e criação</div>
-          </div>
-          <div class="card-body">
-            <span class="category">Destaque 01</span>
-            <h3>Ferramentas de inteligência artificial deixaram de ser tendência e passaram a fazer parte da rotina.</h3>
-            <p>
-              Aplicativos para escrever, resumir textos, organizar tarefas e gerar imagens estão sendo usados por estudantes,
-              profissionais autônomos e pequenas equipes. O interesse cresceu porque essas soluções economizam tempo,
-              ajudam na produtividade e tornam processos mais visuais e rápidos.
-            </p>
-            <div class="card-actions">
-              <a href="#noticia-1" class="btn alt">Ver agora</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="thumb" style="background:
-            radial-gradient(circle at 22% 18%, rgba(255,255,255,0.15), transparent 15%),
-            radial-gradient(circle at 78% 28%, rgba(255,255,255,0.1), transparent 16%),
-            linear-gradient(135deg, rgba(255,79,216,0.95), rgba(126,25,255,0.88) 50%, rgba(255,35,79,0.92));">
-            <span class="thumb-label">Redes sociais</span>
-            <div class="thumb-title">Vídeos curtos seguem dominando atenção e descoberta de conteúdo</div>
-          </div>
-          <div class="card-body">
-            <span class="category">Destaque 02</span>
-            <h3>Conteúdo rápido, visual e direto continua sendo o formato mais forte para alcance e engajamento.</h3>
-            <p>
-              Plataformas baseadas em vídeos curtos seguem puxando tendências, lançando criadores e acelerando a viralização
-              de temas que misturam entretenimento, curiosidade e informação. O público responde melhor quando o conteúdo
-              entrega impacto imediato logo nos primeiros segundos.
-            </p>
-            <div class="card-actions">
-              <a href="#noticia-2" class="btn alt">Ver agora</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="thumb" style="background:
-            radial-gradient(circle at 18% 20%, rgba(255,255,255,0.14), transparent 15%),
-            radial-gradient(circle at 80% 32%, rgba(255,255,255,0.11), transparent 16%),
-            linear-gradient(135deg, rgba(255,35,79,0.96), rgba(255,122,168,0.9) 48%, rgba(255,79,216,0.9));">
-            <span class="thumb-label">Consumo digital</span>
-            <div class="thumb-title">Páginas mais objetivas convertem melhor no mobile</div>
-          </div>
-          <div class="card-body">
-            <span class="category">Destaque 03</span>
-            <h3>Design direto, leitura rápida e botões claros se tornaram essenciais para quem chega por anúncio.</h3>
-            <p>
-              Usuários que entram por campanhas pagas esperam encontrar de imediato o que o criativo prometeu.
-              Por isso, landing pages com visual forte, texto enxuto, hierarquia clara e seções bem divididas
-              costumam gerar mais permanência e menos abandono.
-            </p>
-            <div class="card-actions">
-              <a href="#noticia-3" class="btn alt">Ver agora</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="thumb" style="background:
-            radial-gradient(circle at 20% 20%, rgba(255,255,255,0.14), transparent 15%),
-            radial-gradient(circle at 82% 25%, rgba(255,255,255,0.11), transparent 16%),
-            linear-gradient(135deg, rgba(126,25,255,0.88), rgba(255,79,216,0.9) 50%, rgba(255,35,79,0.92));">
-            <span class="thumb-label">Criadores</span>
-            <div class="thumb-title">Autoridade digital hoje depende de consistência visual e clareza</div>
-          </div>
-          <div class="card-body">
-            <span class="category">Destaque 04</span>
-            <h3>Não basta publicar com frequência: a percepção visual também define o valor de um perfil ou projeto.</h3>
-            <p>
-              Perfis que mantêm identidade forte, linguagem simples e proposta clara conseguem gerar reconhecimento
-              mais rápido. Em um ambiente disputado, o visual ajuda a prender atenção, enquanto a clareza da mensagem
-              faz o usuário entender por que deve continuar navegando.
-            </p>
-            <div class="card-actions">
-              <a href="#noticia-4" class="btn alt">Ver agora</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="thumb" style="background:
-            radial-gradient(circle at 17% 18%, rgba(255,255,255,0.15), transparent 15%),
-            radial-gradient(circle at 81% 31%, rgba(255,255,255,0.1), transparent 16%),
-            linear-gradient(135deg, rgba(255,35,79,0.95), rgba(255,79,216,0.88) 56%, rgba(255,160,200,0.82));">
-            <span class="thumb-label">Privacidade</span>
-            <div class="thumb-title">Segurança digital entra na rotina de quem compra, cria e navega</div>
-          </div>
-          <div class="card-body">
-            <span class="category">Destaque 05</span>
-            <h3>Golpes, links falsos e excesso de exposição fizeram o tema sair do nicho e virar prioridade.</h3>
-            <p>
-              A preocupação com senhas, autenticação em duas etapas, controle de dados e verificação de links
-              aumentou porque mais pessoas dependem do ambiente online para trabalhar, estudar e consumir.
-              Pequenos cuidados já fazem diferença no uso diário da internet.
-            </p>
-            <div class="card-actions">
-              <a href="#noticia-5" class="btn alt">Ver agora</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="thumb" style="background:
-            radial-gradient(circle at 20% 20%, rgba(255,255,255,0.14), transparent 15%),
-            radial-gradient(circle at 80% 28%, rgba(255,255,255,0.1), transparent 16%),
-            linear-gradient(135deg, rgba(255,79,216,0.94), rgba(255,35,79,0.9) 45%, rgba(126,25,255,0.86));">
-            <span class="thumb-label">Tendências</span>
-            <div class="thumb-title">Experiências visuais premium se tornaram diferencial até em páginas simples</div>
-          </div>
-          <div class="card-body">
-            <span class="category">Destaque 06</span>
-            <h3>Sombras, brilho, contraste e composição forte deixaram de ser detalhe e viraram estratégia.</h3>
-            <p>
-              Marcas e criadores perceberam que uma boa primeira impressão acontece em milésimos de segundo.
-              Por isso, páginas com estética mais marcante, visual limpo e sensação de movimento geram
-              curiosidade maior e passam uma imagem mais profissional.
-            </p>
-            <div class="card-actions">
-              <a href="#noticia-6" class="btn alt">Ver agora</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section info-block" aria-labelledby="titulo-explicacao">
-      <div class="section-head">
-        <h2 id="titulo-explicacao">O que você encontra aqui</h2>
-      </div>
-      <p>
-        Esta página reúne conteúdos em destaque organizados de forma simples e visual.
-        O objetivo é facilitar a visualização dos itens mais procurados do momento em um só lugar.
-        Tudo foi disposto para oferecer uma navegação rápida, clara e direta.
-      </p>
-
-      <div class="list-highlights">
-        <div class="list-item">
-          <div class="dot"></div>
+    <section class="section" id="alta">
+      <div class="container">
+        <div class="section-head">
           <div>
-            <strong>Leitura rápida e objetiva</strong>
-            <span>Os conteúdos são apresentados em blocos curtos, com títulos fortes e textos fáceis de escanear no celular.</span>
+            <span class="section-kicker">Em destaque</span>
+            <h2>Em alta agora</h2>
+            <p class="lead">
+              Selecionamos alguns conteúdos que ganharam destaque recente nas redes sociais e plataformas digitais.
+            </p>
           </div>
         </div>
-        <div class="list-item">
-          <div class="dot"></div>
+
+        <div class="cards-grid">
+          <article class="card">
+            <div class="thumb t1" aria-hidden="true">
+              <span class="g g1"></span>
+              <span class="g g2"></span>
+              <span class="g g3"></span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Curiosidades da internet</h3>
+              <p class="card-text">
+                Conteúdos que viralizaram nas redes sociais e despertaram grande curiosidade do público.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb t2" aria-hidden="true">
+              <span class="g g1"></span>
+              <span class="g g2"></span>
+              <span class="g g3"></span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Tendências digitais</h3>
+              <p class="card-text">
+                Assuntos que estão sendo comentados e compartilhados em várias plataformas online.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb t3" aria-hidden="true">
+              <span class="g g1"></span>
+              <span class="g g2"></span>
+              <span class="g g3"></span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Conteúdo viral</h3>
+              <p class="card-text">
+                Vídeos e conteúdos que ganharam popularidade recentemente na internet.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb t4" aria-hidden="true">
+              <span class="g g1"></span>
+              <span class="g g2"></span>
+              <span class="g g3"></span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Destaques da semana</h3>
+              <p class="card-text">
+                Uma seleção de temas que tiveram grande alcance e repercussão.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb t5" aria-hidden="true">
+              <span class="g g1"></span>
+              <span class="g g2"></span>
+              <span class="g g3"></span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">O que está circulando online</h3>
+              <p class="card-text">
+                Conteúdos interessantes que estão sendo compartilhados entre usuários.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb t6" aria-hidden="true">
+              <span class="g g1"></span>
+              <span class="g g2"></span>
+              <span class="g g3"></span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Seleção digital</h3>
+              <p class="card-text">
+                Conteúdos escolhidos para quem gosta de acompanhar o que está em alta.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="artigo">
+      <div class="container">
+        <div class="section-head">
           <div>
-            <strong>Temas de interesse amplo</strong>
-            <span>Há espaço para tendências digitais, comportamento online, novidades visuais, tecnologia e assuntos que despertam curiosidade.</span>
+            <span class="section-kicker">Análise editorial</span>
+            <h2>Conteúdo em foco</h2>
+            <p class="lead">
+              Entenda por que determinados assuntos se espalham tão rapidamente e passam a dominar conversas digitais.
+            </p>
           </div>
         </div>
-        <div class="list-item">
-          <div class="dot"></div>
+
+        <div class="article-wrap">
+          <article class="article-card">
+            <h3>Por que conteúdos virais chamam tanta atenção?</h3>
+            <p>
+              Nos últimos anos, o consumo de conteúdo digital mudou significativamente.
+              Plataformas sociais, vídeos curtos e compartilhamentos rápidos fizeram com que certos conteúdos se espalhassem pela internet em poucas horas.
+            </p>
+            <p>
+              Conteúdos considerados "virais" normalmente possuem três características principais:
+            </p>
+
+            <ul class="points">
+              <li><span class="num">1</span> Curiosidade</li>
+              <li><span class="num">2</span> Facilidade de compartilhamento</li>
+              <li><span class="num">3</span> Forte impacto visual</li>
+            </ul>
+
+            <p>
+              Esses fatores fazem com que milhares de pessoas tenham interesse em descobrir rapidamente o que está sendo comentado online.
+            </p>
+            <p>
+              Por esse motivo, páginas que organizam conteúdos em destaque se tornaram populares entre usuários que desejam acompanhar tendências digitais.
+            </p>
+          </article>
+
+          <aside class="side-panel" aria-label="Resumo visual">
+            <h4>O que torna um destaque relevante</h4>
+            <div class="stat-list">
+              <div class="stat">
+                <strong>Impacto</strong>
+                <p>Chamadas visuais fortes ajudam conteúdos a se destacarem em meio ao grande volume de publicações.</p>
+              </div>
+              <div class="stat">
+                <strong>Rapidez</strong>
+                <p>A circulação acelerada faz com que um tema se espalhe em diferentes plataformas em pouco tempo.</p>
+              </div>
+              <div class="stat">
+                <strong>Interesse</strong>
+                <p>Curiosidade e novidade aumentam o engajamento e mantêm o público atento às descobertas digitais.</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="explorar">
+      <div class="container">
+        <div class="section-head">
           <div>
-            <strong>Estrutura pronta para destaque editorial</strong>
-            <span>A página já nasce com aparência de portal moderno, sem parecer vazia, genérica ou desconectada do anúncio.</span>
+            <span class="section-kicker">Continue navegando</span>
+            <h2>Explore mais conteúdos</h2>
+            <p class="lead">
+              Continue navegando e confira outros destaques disponíveis nesta página.
+            </p>
           </div>
+        </div>
+
+        <div class="explore-grid">
+          <article class="explore-card">
+            <div class="explore-icon" aria-hidden="true"></div>
+            <h3>Conteúdos populares</h3>
+            <p>
+              Veja seleções que estão sendo acessadas por usuários de diversas plataformas.
+            </p>
+          </article>
+
+          <article class="explore-card">
+            <div class="explore-icon" aria-hidden="true"></div>
+            <h3>Tendências online</h3>
+            <p>
+              Acompanhe temas que estão sendo comentados e compartilhados na internet.
+            </p>
+          </article>
+
+          <article class="explore-card">
+            <div class="explore-icon" aria-hidden="true"></div>
+            <h3>Destaques digitais</h3>
+            <p>
+              Conteúdos organizados para facilitar a descoberta de novidades.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="titulo-noticias">
-      <div class="section-head">
-        <h2 id="titulo-noticias">Leituras rápidas</h2>
-        <p>Uma seleção com textos curtos e informativos para deixar a página com conteúdo real e navegação mais rica.</p>
-      </div>
-
-      <div class="feature-list">
-        <article class="feature-row" id="noticia-1">
-          <div class="feature-copy">
-            <h3>Como a IA entrou de vez na rotina comum</h3>
-            <p>
-              O uso de inteligência artificial deixou de ser assunto restrito a empresas de tecnologia.
-              Hoje, pessoas usam recursos de automação para organizar estudos, revisar textos, gerar ideias,
-              resumir conteúdos extensos e até montar apresentações com mais velocidade.
-              O crescimento desse comportamento mostra que conveniência e ganho de tempo têm pesado cada vez mais
-              na escolha das ferramentas digitais.
-            </p>
+    <section class="cta">
+      <div class="container">
+        <div class="cta-panel">
+          <a href="#topo" class="btn">Ver destaques agora</a>
+          <div class="cta-notes" aria-label="Informações complementares">
+            <span>Conteúdos organizados</span>
+            <span>Atualizações frequentes</span>
+            <span>Exploração simples e rápida</span>
           </div>
-          <div class="feature-action">
-            <a href="#final" class="btn alt">Acessar</a>
-          </div>
-        </article>
-
-        <article class="feature-row" id="noticia-2">
-          <div class="feature-copy">
-            <h3>Por que o vídeo curto continua tão forte</h3>
-            <p>
-              O sucesso do formato está na combinação entre velocidade, impacto visual e facilidade de consumo.
-              Em poucos segundos, o usuário decide se continua assistindo ou desliza para o próximo vídeo.
-              Isso fez com que criadores, marcas e páginas editoriais passassem a investir mais em aberturas fortes,
-              legendas objetivas e ritmo intenso para manter retenção e ampliar alcance.
-            </p>
-          </div>
-          <div class="feature-action">
-            <a href="#final" class="btn alt">Acessar</a>
-          </div>
-        </article>
-
-        <article class="feature-row" id="noticia-3">
-          <div class="feature-copy">
-            <h3>Landing page boa precisa cumprir a promessa do anúncio</h3>
-            <p>
-              Quando uma pessoa sai de um anúncio e entra em uma página, ela espera coerência imediata.
-              Isso significa manter tom visual semelhante, repetir a sensação do criativo e apresentar logo no topo
-              algo que faça sentido com a chamada que despertou o clique.
-              Quanto menor o atrito entre anúncio e destino, maior a chance de engajamento.
-            </p>
-          </div>
-          <div class="feature-action">
-            <a href="#final" class="btn alt">Acessar</a>
-          </div>
-        </article>
-
-        <article class="feature-row" id="noticia-4">
-          <div class="feature-copy">
-            <h3>Visual forte ajuda a passar valor antes mesmo da leitura</h3>
-            <p>
-              Cores vibrantes, contraste alto, tipografia pesada e uma boa hierarquia visual influenciam
-              a percepção de qualidade. Mesmo antes de ler o texto, o usuário já forma uma impressão sobre
-              profissionalismo, urgência e relevância. Esse efeito é ainda mais importante em dispositivos móveis,
-              onde a atenção é disputada a todo instante.
-            </p>
-          </div>
-          <div class="feature-action">
-            <a href="#final" class="btn alt">Acessar</a>
-          </div>
-        </article>
-
-        <article class="feature-row" id="noticia-5">
-          <div class="feature-copy">
-            <h3>Privacidade digital virou hábito, não só preocupação</h3>
-            <p>
-              Com mais contas, mais compras online e mais uso de plataformas sociais, cresceu também
-              a necessidade de comportamento preventivo. Hoje, muita gente já entende a importância de senhas fortes,
-              verificação em duas etapas e cautela com links suspeitos. Esse cuidado se tornou parte da rotina básica
-              de quem quer navegar com mais segurança e menos risco.
-            </p>
-          </div>
-          <div class="feature-action">
-            <a href="#final" class="btn alt">Acessar</a>
-          </div>
-        </article>
-
-        <article class="feature-row" id="noticia-6">
-          <div class="feature-copy">
-            <h3>Experiência visual premium não é exagero, é estratégia</h3>
-            <p>
-              Em ambientes de alta concorrência, páginas neutras demais tendem a desaparecer no meio de tantas outras.
-              Já uma composição mais forte, com brilho, profundidade, ritmo e organização, consegue gerar mais curiosidade
-              e dar sensação de novidade. Não se trata apenas de beleza, mas de prender atenção tempo suficiente
-              para a mensagem principal ser entendida.
-            </p>
-          </div>
-          <div class="feature-action">
-            <a href="#final" class="btn alt">Acessar</a>
-          </div>
-        </article>
+        </div>
       </div>
     </section>
-
-    <section class="section" aria-labelledby="titulo-mais-destaques">
-      <div class="section-head">
-        <h2 id="titulo-mais-destaques">Mais destaques para explorar</h2>
-        <p>Continue navegando e confira outros conteúdos disponíveis.</p>
-      </div>
-
-      <div class="feature-list">
-        <article class="feature-row">
-          <div class="feature-copy">
-            <h3>Conteúdo em destaque</h3>
-            <p>
-              Atualizado com frequência para manter a página sempre dinâmica.
-              A ideia é apresentar temas que despertem curiosidade logo no primeiro contato.
-            </p>
-          </div>
-          <div class="feature-action">
-            <a href="#final" class="btn alt">Acessar</a>
-          </div>
-        </article>
-
-        <article class="feature-row">
-          <div class="feature-copy">
-            <h3>Seleção do momento</h3>
-            <p>
-              Itens apresentados de forma visual para facilitar a navegação.
-              Tudo foi pensado para leitura rápida, especialmente em telas menores.
-            </p>
-          </div>
-          <div class="feature-action">
-            <a href="#final" class="btn alt">Acessar</a>
-          </div>
-        </article>
-
-        <article class="feature-row">
-          <div class="feature-copy">
-            <h3>Mais visualizados</h3>
-            <p>
-              Uma área pensada para mostrar rapidamente o que mais chama atenção.
-              Ideal para manter a sensação de movimento e descoberta dentro da página.
-            </p>
-          </div>
-          <div class="feature-action">
-            <a href="#final" class="btn alt">Acessar</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section final-cta" id="final" aria-labelledby="titulo-cta-final">
-      <div class="section-head">
-        <h2 id="titulo-cta-final">ACESSAR AGORA</h2>
-      </div>
-
-      <a href="#em-alta" class="btn">ACESSAR AGORA</a>
-
-      <div class="mini-points">
-        <span>Conteúdos em destaque</span>
-        <span>Atualizações frequentes</span>
-        <span>Navegação rápida e visual</span>
-      </div>
-    </section>
-
-    <footer>
-      <p>Página de conteúdo online</p>
-      <p>Atualizada regularmente</p>
-    </footer>
   </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <p>
+        Portal de conteúdo digital<br />
+        Atualizado regularmente
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
